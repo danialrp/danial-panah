@@ -14,10 +14,10 @@ const illustration = {
 };
 
 const greeting = {
-  username: "danialrp",
+  username: "danial panah",
   title: "Hi, I'm Danial",
   subTitle: emoji(
-    "Senior Backend Engineer with production-grade experience in PHP/Laravel and Go — building scalable APIs, real-time systems, ERP integrations, and crypto exchange platforms since 2015. 🚀"
+    "Senior Backend Engineer with production-grade experience in Go, Python and PHP/Laravel — building scalable APIs, real-time systems, ERP integrations, and crypto exchange platforms since 2015. 🚀"
   ),
   resumeLink: "https://danialrp.com/resume",
   displayGreeting: true
@@ -36,10 +36,10 @@ const socialMediaLinks = {
 const skillsSection = {
   title: "What I Do",
   subTitle:
-    "SENIOR BACKEND ENGINEER SPECIALISING IN LARAVEL, GO, AND SCALABLE DISTRIBUTED SYSTEMS",
+    "SENIOR BACKEND ENGINEER SPECIALISING IN GOLANG, PYTHON, LARAVEL AND SCALABLE DISTRIBUTED SYSTEMS",
   skills: [
     emoji(
-      "⚡ Architect and build production-grade REST APIs and backend systems using PHP/Laravel and Go"
+      "⚡ Architect and build production-grade REST APIs and backend systems using Go, Python and PHP/Laravel"
     ),
     emoji(
       "⚡ Design real-time event-driven microservices with WebSockets, NATS JetStream, and Redis queue systems"
@@ -50,20 +50,20 @@ const skillsSection = {
   ],
   softwareSkills: [
     {
-      skillName: "PHP",
-      fontAwesomeClassname: "fab fa-php"
-    },
-    {
-      skillName: "Laravel",
-      fontAwesomeClassname: "fas fa-fire-alt"
-    },
-    {
       skillName: "Go",
       fontAwesomeClassname: "fas fa-code"
     },
     {
       skillName: "Python",
       fontAwesomeClassname: "fab fa-python"
+    },
+    {
+      skillName: "Laravel",
+      fontAwesomeClassname: "fas fa-fire-alt"
+    },
+    {
+      skillName: "PHP",
+      fontAwesomeClassname: "fab fa-php"
     },
     {
       skillName: "PostgreSQL",
@@ -90,12 +90,20 @@ const skillsSection = {
       fontAwesomeClassname: "fab fa-vuejs"
     },
     {
-      skillName: "Linux",
-      fontAwesomeClassname: "fab fa-linux"
+      skillName: "Node.js",
+      fontAwesomeClassname: "fab fa-node-js"
     },
     {
-      skillName: "HTML5",
-      fontAwesomeClassname: "fab fa-html5"
+      skillName: "FastAPI",
+      fontAwesomeClassname: "fas fa-bolt"
+    },
+    {
+      skillName: "NATS JetStream",
+      fontAwesomeClassname: "fas fa-stream"
+    },
+    {
+      skillName: "WebSocket",
+      fontAwesomeClassname: "fas fa-plug"
     }
   ],
   display: true
@@ -129,11 +137,11 @@ const techStack = {
   viewSkillBars: true,
   experience: [
     {
-      Stack: "PHP / Laravel",
+      Stack: "Backend Architecture / APIs / WebSockets",
       progressPercentage: "95%"
     },
     {
-      Stack: "Backend Architecture & APIs",
+      Stack: "PHP / Laravel",
       progressPercentage: "90%"
     },
     {
@@ -142,7 +150,7 @@ const techStack = {
     },
     {
       Stack: "Python / Django / FastAPI",
-      progressPercentage: "55%"
+      progressPercentage: "65%"
     }
   ],
   displayCodersrank: false
@@ -161,9 +169,9 @@ const workExperiences = {
       descBullets: [
         "Laravel 10 / PHP 8.x, PostgreSQL (72+ migrations), Redis, Docker",
         "Real-time features via Laravel Reverb (WebSockets) and Livewire 3",
-        "14+ automated background jobs via Laravel Horizon queue workers",
+        // "14+ automated background jobs via Laravel Horizon queue workers",
         "Multi-tenant architecture with DB-driven runtime RBAC across 30+ service classes",
-        "JTL ERP integration via Guzzle — async company, user, and role data sync",
+        // "JTL ERP integration via Guzzle — async company, user, and role data sync",
         "Full messaging hub: IMAP inbox polling, SMTP outbound, auto-routing rules engine"
       ]
     },
@@ -200,17 +208,6 @@ const workExperiences = {
         "Bloomd: Oxford University social network with chat, video/voice calls, and mentor matching",
         "Nova AI: NHS-compliant centralised dentistry management platform"
       ]
-    },
-    {
-      role: "PHP Laravel Developer & Project Manager",
-      company: "Teknet Ltd",
-      companylogo: require("./assets/images/companies/teknetLogo.png"),
-      date: "Jun 2018 – Jan 2020",
-      desc: "Led senior backend and RESTful API development. Managed deployments via Laravel Forge. Delivered enterprise-grade project management and scheduling systems.",
-      descBullets: [
-        "Tradesoft: enterprise project management with CRM, accounting, GPS, and scheduling modules",
-        "NCFED: online scheduling/reservation system with PayPal integration"
-      ]
     }
   ]
 };
@@ -231,31 +228,46 @@ const bigProjects = {
       projectName: "IRBTC — Cryptocurrency Exchange",
       projectDesc:
         "Production-grade crypto exchange backend handling fiat/crypto trading, KYC identity verification, and financial transaction processing. Built with Laravel 10, PostgreSQL, Redis, AWS S3. 90+ services, 28 contract-based interfaces, Huobi (HTX) integration.",
-      footerLink: []
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://irbtc.com"
+        }
+      ]
     },
     {
       image: require("./assets/images/projects/cryhubLogo.png"),
       projectName: "CryHub — Real-Time Market Data Platform",
       projectDesc:
         "High-throughput event-driven microservices platform for real-time crypto market data ingestion and fan-out distribution. Built with Go, NATS JetStream, TimescaleDB, Redis, WebSocket. 4-service pipeline, 8-stream NATS topology, thread-safe pub/sub hub.",
-      footerLink: []
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://cryhub.io"
+        }
+      ]
     },
     {
       image: require("./assets/images/projects/subkeLogo.png"),
       projectName: "Subke CRM & Logistics Platform",
       projectDesc:
         "Full-stack internal CRM and logistics management system. Multi-tenant architecture with DB-driven RBAC, real-time messaging hub, parcel tracking, QR-code item management, JTL ERP integration, and 30+ domain service classes across 72+ DB migrations.",
-      footerLink: []
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://www.subke.com/en/"
+        }
+      ]
     },
     {
       image: require("./assets/images/projects/bryantLogo.png"),
       projectName: "Bryant Dental",
       projectDesc:
-        "Award-winning e-commerce platform for a UK dental equipment manufacturer. Awwwards Honorable Mention 2018. Dental Industry Awards Best Website 2019.",
+        "Award-winning e-commerce platform for a UK dental equipment manufacturer, built with Laravel and Vue.js. Features a custom product configurator, quote engine, and content management system. Awwwards Honorable Mention 2018. Dental Industry Awards Best Website 2019.",
       footerLink: [
         {
           name: "Visit Website",
-          url: "https://www.bryantdental.co.uk/"
+          url: "https://bryant.dental/"
         }
       ]
     }
@@ -274,12 +286,7 @@ const achievementSection = {
         "Bryant Dental recognised with an Awwwards Honorable Mention in 2018 for outstanding web design and development.",
       image: require("./assets/images/achievements/awwwardsLogo.png"),
       imageAlt: "Awwwards Logo",
-      footerLink: [
-        {
-          name: "Awwwards",
-          url: "https://www.awwwards.com/"
-        }
-      ]
+      footerLink: []
     },
     {
       title: "Dental Industry Awards — Best Website 2019",
@@ -327,7 +334,7 @@ const resumeSection = {
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle:
-    "Have a project in mind or want to discuss opportunities? My inbox is open.",
+    "Available for backend engineering roles, technical consulting, and architecture discussions.",
   email_address: "me@danialrp.com"
 };
 

@@ -4,6 +4,7 @@ import Button from "../../components/button/Button";
 import {openSource, socialMediaLinks} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 import Loading from "../../containers/loading/Loading";
+import ActivityCharts from "../../components/activityCharts/ActivityCharts";
 export default function Projects() {
   const GithubRepoCard = lazy(() =>
     import("../../components/githubRepoCard/GithubRepoCard")
@@ -59,6 +60,7 @@ export default function Projects() {
               );
             })}
           </div>
+          <ActivityCharts />
           <Button
             text={"More Projects"}
             className="project-button"

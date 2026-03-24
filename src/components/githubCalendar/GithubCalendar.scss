@@ -1,0 +1,81 @@
+@import "../../_globalColor";
+
+.github-calendar {
+  width: 100%;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+
+  .gh-icon {
+    font-size: 20px;
+    color: #e6edf3;
+  }
+
+  .calendar-platform-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: $textColor;
+  }
+
+  .calendar-count {
+    font-size: 13px;
+    color: $subTitle;
+  }
+
+  &.dark {
+    .calendar-platform-label {
+      color: #e6edf3;
+    }
+    .calendar-count {
+      color: #7d8590;
+    }
+  }
+}
+
+.calendar-scroll-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.calendar-svg {
+  display: block;
+}
+
+.calendar-month {
+  font-size: 11px;
+  fill: $subTitle;
+
+  &.dark {
+    fill: #7d8590;
+  }
+}
+
+.calendar-day-label {
+  font-size: 10px;
+  fill: $subTitle;
+
+  &.dark {
+    fill: #7d8590;
+  }
+}
+
+.calendar-cell {
+  cursor: default;
+  transition: opacity 0.15s;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+.calendar-loading,
+.calendar-error {
+  font-size: 13px;
+  color: $subTitle;
+  padding: 8px 0;
+}

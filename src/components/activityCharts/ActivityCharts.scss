@@ -1,0 +1,40 @@
+@import "../../_globalColor";
+
+/* Wrapper that sits between pinned repos and More Projects button */
+.activity-charts-wrap {
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.activity-charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  /* Prevent grid children from overflowing their tracks */
+  > * {
+    min-width: 0;
+  }
+}
+
+/* ── Card ── */
+.chart-card {
+  padding: 20px 22px 18px;
+  border-radius: 12px;
+  background: $lightBackground3;
+  box-shadow: 0 4px 16px $lightBoxShadow;
+  /* Let the inner scroll wrapper handle SVG overflow */
+  overflow: hidden;
+
+  &.dark {
+    background: #161b22;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .activity-charts-grid {
+    grid-template-columns: 1fr;
+  }
+}

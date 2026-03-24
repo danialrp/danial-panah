@@ -8,7 +8,22 @@ export default function ExperienceCard({cardInfo, isDark}) {
 
   function getColorArrays() {
     const colorThief = new ColorThief();
-    setColorArrays(colorThief.getColor(imgRef.current));
+    const palette = colorThief.getPalette(imgRef.current, 8);
+
+    // Pick the most saturated color that isn't near-white or near-black
+    const scored = palette.map(color => {
+      const [r, g, b] = color;
+      const max = Math.max(r, g, b) / 255;
+      const min = Math.min(r, g, b) / 255;
+      const lightness = (max + min) / 2;
+      const saturation = max === min ? 0 : (max - min) / (1 - Math.abs(2 * lightness - 1));
+      const tooLight = lightness > 0.85;
+      const tooDark = lightness < 0.15;
+      return {color, score: tooLight || tooDark ? -1 : saturation};
+    });
+
+    scored.sort((a, b) => b.score - a.score);
+    setColorArrays(scored[0].color);
   }
 
   function rgb(values) {
