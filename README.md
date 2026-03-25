@@ -167,3 +167,4 @@ src/
 
 - Lottie animations via [LottieFiles](https://lottiefiles.com)
 - Illustrations via [unDraw](https://undraw.co)
+- Based on [developerFolio](https://github.com/saadpasta/developerFolio) by [@saadpasta](https://github.com/saadpasta)
