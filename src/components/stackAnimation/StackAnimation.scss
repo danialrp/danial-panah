@@ -1,0 +1,295 @@
+@import "../../_globalColor";
+
+/* ── Wrapper ── */
+.stack-anim-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+  animation: stackFloat 4s ease-in-out infinite;
+}
+
+@keyframes stackFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* ── Window chrome ── */
+.stack-window {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22), 0 4px 16px rgba(0, 0, 0, 0.12);
+  background: #1e1e2e;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  font-family: "Fira Code", "JetBrains Mono", "Consolas", monospace;
+}
+
+.dark .stack-window {
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45), 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Title bar ── */
+.stack-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 14px;
+  background: #181825;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+
+  &.red {
+    background: #ff5f57;
+  }
+  &.yellow {
+    background: #febc2e;
+  }
+  &.green {
+    background: #28c840;
+  }
+}
+
+.titlebar-label {
+  margin-left: 8px;
+  color: #6c7086;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+}
+
+/* ── Body ── */
+.stack-body {
+  padding: 16px 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ── Tech card ── */
+.tech-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border-left: 3px solid var(--brand);
+  background: rgba(255, 255, 255, 0.03);
+  animation: cardSlideIn 0.4s ease-out both;
+  animation-delay: var(--delay);
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: var(--glow);
+  }
+}
+
+@keyframes cardSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ── Logo ── */
+.tech-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+
+  svg {
+    animation: logoPulse 3s ease-in-out infinite;
+    animation-delay: var(--delay);
+    filter: drop-shadow(0 0 5px var(--brand));
+  }
+}
+
+@keyframes logoPulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 3px var(--brand));
+    opacity: 0.9;
+  }
+  50% {
+    filter: drop-shadow(0 0 9px var(--brand));
+    opacity: 1;
+  }
+}
+
+/* ── Info ── */
+.tech-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.tech-name-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tech-name {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.tech-role {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  color: #6c7086;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 1px 6px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tech-desc {
+  font-size: 11.5px;
+  color: #585b70;
+  letter-spacing: 0.1px;
+}
+
+/* ── Health monitor ── */
+.health-monitor {
+  margin-top: 4px;
+  border-radius: 8px;
+  border: 1px solid rgba(166, 227, 161, 0.15);
+  background: rgba(166, 227, 161, 0.03);
+  overflow: hidden;
+  animation: cardSlideIn 0.4s ease-out both;
+  animation-delay: 0.65s;
+}
+
+.health-header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #a6e3a1;
+  flex-shrink: 0;
+  animation: livePulse 1.2s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 4px #a6e3a1; }
+  50%       { opacity: 0.3; box-shadow: none; }
+}
+
+.health-title {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  color: #a6e3a1;
+  flex: 1;
+}
+
+.health-uptime {
+  font-size: 9px;
+  color: #45475a;
+  letter-spacing: 0.3px;
+}
+
+.health-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.svc-status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #a6e3a1;
+  flex-shrink: 0;
+  animation: livePulse 1.8s ease-in-out infinite;
+}
+
+.svc-name {
+  font-size: 11.5px;
+  color: #cdd6f4;
+  flex: 1;
+  letter-spacing: 0.1px;
+}
+
+.svc-lang {
+  font-size: 9px;
+  color: #45475a;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 3px;
+  padding: 1px 5px;
+  letter-spacing: 0.3px;
+}
+
+.svc-ok {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #a6e3a1;
+  letter-spacing: 0.5px;
+  width: 18px;
+}
+
+.svc-latency {
+  font-size: 12px;
+  font-weight: 700;
+  color: #cba6f7;
+  min-width: 38px;
+  text-align: right;
+  transition: color 0.3s ease;
+}
+
+.svc-ms {
+  font-size: 9px;
+  font-weight: 400;
+  color: #585b70;
+  margin-left: 1px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .stack-anim-wrapper {
+    padding: 10px;
+  }
+}

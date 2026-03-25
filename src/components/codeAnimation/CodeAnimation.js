@@ -14,12 +14,12 @@ const CODE_LINES = [
   {indent: 0, tokens: []},
   {indent: 0, tokens: [{text: "func ", type: "keyword"}, {text: "main", type: "fn"}, {text: "() {", type: "punct"}]},
   {indent: 1, tokens: [{text: "d ", type: "var"}, {text: ":= ", type: "punct"}, {text: "Developer", type: "type"}, {text: "{", type: "punct"}]},
-  {indent: 2, tokens: [{text: "Name:  ", type: "prop"}, {text: '"Danial Rahmani"', type: "string"}, {text: ",", type: "punct"}]},
+  {indent: 2, tokens: [{text: "Name:  ", type: "prop"}, {text: '"Danial Panah"', type: "string"}, {text: ",", type: "punct"}]},
   {indent: 2, tokens: [{text: "Role:  ", type: "prop"}, {text: '"Senior Backend Engineer"', type: "string"}, {text: ",", type: "punct"}]},
   {indent: 2, tokens: [{text: "Since: ", type: "prop"}, {text: "2015", type: "number"}, {text: ",", type: "punct"}]},
   {indent: 2, tokens: [{text: "Stack: ", type: "prop"}, {text: '[]', type: "punct"}, {text: "string", type: "keyword"}, {text: "{", type: "punct"}, {text: '"Go"', type: "string"}, {text: ", ", type: "punct"}, {text: '"Python"', type: "string"}, {text: ", ", type: "punct"}, {text: '"Laravel"', type: "string"}, {text: "},", type: "punct"}]},
   {indent: 1, tokens: [{text: "}", type: "punct"}]},
-  {indent: 1, tokens: [{text: "d", type: "var"}, {text: ".", type: "punct"}, {text: "Build", type: "fn"}, {text: "()", type: "punct"}]},
+  // {indent: 1, tokens: [{text: "d", type: "var"}, {text: ".", type: "punct"}, {text: "Build", type: "fn"}, {text: "()", type: "punct"}]},
   {indent: 0, tokens: [{text: "}", type: "punct"}]},
 ];
 

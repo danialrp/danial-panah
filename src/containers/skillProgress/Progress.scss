@@ -49,10 +49,6 @@
   .skills-bar {
     line-height: 4rem;
   }
-  .skills-image {
-    display: none;
-    order: 2;
-  }
 }
 
 @media (max-width: 768px) {
@@ -65,6 +61,5 @@
   }
   .skills-image {
     display: none;
-    order: 2;
   }
 }
