@@ -29,3 +29,5 @@ public/blogs.json
 # local
 /portfolio-resume
 .env
+.claude
+.idea
