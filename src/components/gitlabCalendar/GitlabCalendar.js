@@ -30,9 +30,10 @@ function getColor(count, isDark) {
 
 function buildGrid() {
   const today = new Date();
+  // Anchor to the Sunday of the current week, then go back (WEEKS-1) full weeks
+  // so the grid always includes today in the last column.
   const start = new Date(today);
-  start.setDate(start.getDate() - WEEKS * DAYS + 1);
-  start.setDate(start.getDate() - start.getDay());
+  start.setDate(today.getDate() - today.getDay() - (WEEKS - 1) * DAYS);
   const grid = [];
   for (let w = 0; w < WEEKS; w++) {
     const week = [];
