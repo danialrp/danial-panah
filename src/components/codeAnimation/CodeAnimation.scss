@@ -1,0 +1,209 @@
+@import "../../_globalColor";
+
+/* ── wrapper ── */
+.code-anim-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+  animation: floatUpDown 4s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+/* ── window chrome ── */
+.code-window {
+  width: 100%;
+  max-width: 460px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22), 0 4px 16px rgba(0, 0, 0, 0.12);
+  background: #1e1e2e;
+  font-family: "Fira Code", "JetBrains Mono", "Consolas", monospace;
+  font-size: 13.5px;
+  line-height: 1.7;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.dark .code-window {
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45), 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* ── title bar ── */
+.code-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 14px;
+  background: #181825;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+
+  &.red {
+    background: #ff5f57;
+  }
+  &.yellow {
+    background: #febc2e;
+  }
+  &.green {
+    background: #28c840;
+  }
+}
+
+.titlebar-label {
+  margin-left: 8px;
+  color: #6c7086;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+}
+
+/* ── code body ── */
+.code-body {
+  padding: 14px 0;
+  min-height: 220px;
+}
+
+.code-line {
+  display: flex;
+  align-items: baseline;
+  padding: 0 14px;
+  animation: slideInLine 0.18s ease-out both;
+}
+
+@keyframes slideInLine {
+  from {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.line-num {
+  min-width: 28px;
+  color: #45475a;
+  font-size: 12px;
+  user-select: none;
+  text-align: right;
+  margin-right: 18px;
+}
+
+.line-content {
+  flex: 1;
+}
+
+/* ── syntax tokens ── */
+.token-keyword {
+  color: #cba6f7;
+}
+.token-var {
+  color: #89dceb;
+}
+.token-type {
+  color: #f9e2af;
+}
+.token-prop {
+  color: #89b4fa;
+}
+.token-string {
+  color: #a6e3a1;
+}
+.token-number {
+  color: #fab387;
+}
+.token-fn {
+  color: #f38ba8;
+}
+.token-punct {
+  color: #cdd6f4;
+}
+
+/* ── blinking cursor ── */
+.cursor {
+  color: #cba6f7;
+  opacity: 0;
+  transition: opacity 0.05s;
+  font-weight: 200;
+
+  &.visible {
+    opacity: 1;
+  }
+}
+
+/* ── floating tech badges ── */
+.floating-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 22px;
+}
+
+.badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  background: rgba(137, 180, 250, 0.12);
+  color: #89b4fa;
+  border: 1px solid rgba(137, 180, 250, 0.25);
+  backdrop-filter: blur(4px);
+  animation: badgeFloat 0.5s ease-out both;
+}
+
+.dark .badge {
+  background: rgba(137, 180, 250, 0.08);
+}
+
+.badge-1 {
+  animation-delay: 0.1s;
+}
+.badge-2 {
+  animation-delay: 0.25s;
+}
+.badge-3 {
+  animation-delay: 0.4s;
+}
+.badge-4 {
+  animation-delay: 0.55s;
+}
+
+@keyframes badgeFloat {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── responsive ── */
+@media (max-width: 768px) {
+  .code-anim-wrapper {
+    padding: 10px;
+  }
+
+  .code-window {
+    font-size: 12px;
+  }
+}
