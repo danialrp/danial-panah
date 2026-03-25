@@ -13,3 +13,21 @@
   margin-top: 2rem;
   padding-bottom: 1rem;
 }
+
+.footer-text a {
+  color: $subTitle;
+  text-decoration: none;
+  transition: color 0.2s ease-in;
+
+  &:hover {
+    color: $buttonColor;
+  }
+}
+
+.dark-mode.footer-text a {
+  color: $textColorDark;
+
+  &:hover {
+    color: $buttonColor;
+  }
+}

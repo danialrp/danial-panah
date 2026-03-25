@@ -15,11 +15,11 @@ const illustration = {
 
 const greeting = {
   username: "danial panah",
-  title: "Hi, I'm Danial",
+  title: "Danial Panah",
   subTitle: emoji(
     "Senior Backend Engineer with production-grade experience in Go, Python and PHP/Laravel — building scalable APIs, real-time systems, ERP integrations, and crypto exchange platforms since 2015. 🚀"
   ),
-  resumeLink: "https://danialrp.com/resume",
+  resumeLink: "/DanialPanah—SeniorBackendEngineer.pdf",
   displayGreeting: true
 };
 
@@ -29,6 +29,7 @@ const socialMediaLinks = {
   linkedin: "https://www.linkedin.com/in/danialrp/",
   gmail: "me@danialrp.com",
   gitlab: "https://gitlab.com/danialrp",
+  x: "https://x.com/DanialPanah",
   display: true
 };
 
@@ -51,59 +52,59 @@ const skillsSection = {
   softwareSkills: [
     {
       skillName: "Go",
-      fontAwesomeClassname: "fas fa-code"
+      iconKey: "go"
     },
     {
       skillName: "Python",
-      fontAwesomeClassname: "fab fa-python"
+      iconKey: "python"
     },
     {
       skillName: "Laravel",
-      fontAwesomeClassname: "fas fa-fire-alt"
+      iconKey: "laravel"
     },
     {
       skillName: "PHP",
-      fontAwesomeClassname: "fab fa-php"
+      iconKey: "php"
     },
     {
       skillName: "PostgreSQL",
-      fontAwesomeClassname: "fas fa-database"
+      iconKey: "postgresql"
     },
     {
       skillName: "Redis",
-      fontAwesomeClassname: "fas fa-server"
+      iconKey: "redis"
     },
     {
       skillName: "Docker",
-      fontAwesomeClassname: "fab fa-docker"
+      iconKey: "docker"
     },
     {
       skillName: "AWS",
-      fontAwesomeClassname: "fab fa-aws"
+      iconKey: "aws"
     },
     {
       skillName: "Git",
-      fontAwesomeClassname: "fab fa-git-alt"
+      iconKey: "git"
     },
     {
       skillName: "Vue.js",
-      fontAwesomeClassname: "fab fa-vuejs"
+      iconKey: "vuejs"
     },
     {
       skillName: "Node.js",
-      fontAwesomeClassname: "fab fa-node-js"
+      iconKey: "nodejs"
     },
     {
       skillName: "FastAPI",
-      fontAwesomeClassname: "fas fa-bolt"
+      iconKey: "fastapi"
     },
     {
       skillName: "NATS JetStream",
-      fontAwesomeClassname: "fas fa-stream"
+      iconKey: "nats"
     },
     {
       skillName: "WebSocket",
-      fontAwesomeClassname: "fas fa-plug"
+      iconKey: "websocket"
     }
   ],
   display: true
@@ -224,14 +225,14 @@ const bigProjects = {
   subtitle: "PRODUCTION SYSTEMS AND PLATFORMS BUILT ACROSS FINTECH, CRYPTO, LOGISTICS AND ENTERPRISE",
   projects: [
     {
-      image: require("./assets/images/projects/irbtcLogo.png"),
-      projectName: "IRBTC — Cryptocurrency Exchange",
+      image: require("./assets/images/projects/subkeLogo.png"),
+      projectName: "Subke CRM & Logistics Platform",
       projectDesc:
-        "Production-grade crypto exchange backend handling fiat/crypto trading, KYC identity verification, and financial transaction processing. Built with Laravel 10, PostgreSQL, Redis, AWS S3. 90+ services, 28 contract-based interfaces, Huobi (HTX) integration.",
+        "Full-stack internal CRM and logistics management system. Multi-tenant architecture with DB-driven RBAC, real-time messaging hub, parcel tracking, QR-code item management, JTL ERP integration, and 30+ domain service classes across 72+ DB migrations.",
       footerLink: [
         {
           name: "Visit Website",
-          url: "https://irbtc.com"
+          url: "https://www.subke.com/en/"
         }
       ]
     },
@@ -248,14 +249,14 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/projects/subkeLogo.png"),
-      projectName: "Subke CRM & Logistics Platform",
+      image: require("./assets/images/projects/irbtcLogo.png"),
+      projectName: "IRBTC — Cryptocurrency Exchange",
       projectDesc:
-        "Full-stack internal CRM and logistics management system. Multi-tenant architecture with DB-driven RBAC, real-time messaging hub, parcel tracking, QR-code item management, JTL ERP integration, and 30+ domain service classes across 72+ DB migrations.",
+        "Production-grade crypto exchange backend handling fiat/crypto trading, KYC identity verification, and financial transaction processing. Built with Laravel 10, PostgreSQL, Redis, AWS S3. 90+ services, 28 contract-based interfaces, Huobi (HTX) integration.",
       footerLink: [
         {
           name: "Visit Website",
-          url: "https://www.subke.com/en/"
+          url: "https://irbtc.com"
         }
       ]
     },

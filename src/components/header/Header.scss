@@ -16,7 +16,7 @@
   color: $textColorDark !important;
 }
 
-.dark-menu li a:hover {
+.dark-menu li a:not(.toggle-switch-link):hover {
   background-color: $buttonColor !important;
 }
 
@@ -45,7 +45,7 @@
   text-decoration: none;
 }
 
-.header li a:hover,
+.header li a:not(.toggle-switch-link):hover,
 .header .menu-btn:hover {
   background-color: $headerHoverBG;
 }

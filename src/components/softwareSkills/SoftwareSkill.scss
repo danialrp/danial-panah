@@ -3,7 +3,6 @@
 .dev-icons {
   padding-left: 0;
   list-style: none;
-  font-size: 3rem;
   margin-bottom: 0px;
   margin-top: 0px;
   text-align: center;
@@ -13,19 +12,36 @@
   display: inline-block;
   margin-right: 20px;
   margin-bottom: 20px;
-}
 
-.software-skill-inline > i {
-  color: $subTitle;
-}
+  .tech-icon {
+    font-size: 3rem;
+    color: $subTitle;
+    display: block;
+    margin: 0 auto;
+  }
 
-.software-skill-inline > i:hover {
-  color: $skillsColor;
-}
-.software-skill-inline > p {
-  color: $subTitle;
-  font-size: 10px;
-}
-.software-skill-inline > i:hover ~ p {
-  color: $skillsColor;
+  p {
+    color: $subTitle;
+    font-size: 10px;
+  }
+
+  &:hover .tech-icon {
+    color: $skillsColor;
+  }
+
+  &:hover p {
+    color: $skillsColor;
+  }
+
+  &[name="Python"] .tech-icon,
+  &[name="PostgreSQL"] .tech-icon {
+    font-size: 2.6rem;
+  }
+
+  &[name="Laravel"] .tech-icon {
+    font-size: calc(3rem - 2px);
+  }
+  &[name="Redis"] .tech-icon {
+    font-size: calc(3rem - 5px);
+  }
 }
