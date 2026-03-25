@@ -31,3 +31,5 @@ public/blogs.json
 .env
 .claude
 .idea
+.htaccess
+sitemap.xml
