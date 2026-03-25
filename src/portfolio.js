@@ -5,7 +5,7 @@ import splashAnimation from "./assets/lottie/splashAnimation";
 const splashScreen = {
   enabled: true,
   animation: splashAnimation,
-  duration: 2000
+  duration: 3600
 };
 
 // Summary And Greeting Section
