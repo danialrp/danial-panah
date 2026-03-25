@@ -1,27 +1,41 @@
-# Danial Panah — Personal Portfolio
+# danialrp.com — Personal Portfolio
 
-A personal developer portfolio built with React, showcasing my experience as a Senior Backend Engineer. Features animated sections, GitHub/GitLab activity charts, skills display, and a downloadable resume.
+[![React](https://img.shields.io/badge/React-16.x-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)
+[![SASS](https://img.shields.io/badge/SASS-CC6699?logo=sass&logoColor=white)](https://sass-lang.com/)
+[![Node.js](https://img.shields.io/badge/Node.js-16+-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?logo=github&logoColor=white)](https://pages.github.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
+Personal portfolio site for **Danial Panah** — Senior Backend Engineer with 10+ years building production systems in Go, Python, and PHP/Laravel.
+
+Live at **[danialrp.com](https://danialrp.com)**
+
+---
 
 ## Tech Stack
 
-- **React** (Create React App)
-- **SASS** for styling
-- **Lottie** for animations
-- **GitHub GraphQL API** for live profile & repo data
-- **GitLab API** for activity chart
-- **Docker** for containerised runs
+| Layer | Technology |
+|---|---|
+| UI | React 16, SASS |
+| Animations | Lottie |
+| Live data | GitHub GraphQL API, GitLab REST API |
+| Containerisation | Docker |
+| Deployment | GitHub Pages / Netlify |
+
+---
 
 ## Prerequisites
 
 - Node.js `v16+`
 - npm `v8+`
-- Git
+- Git `v2.17+`
 
 ---
 
 ## Getting Started
 
-### 1. Clone & install
+### 1. Clone and install
 
 ```bash
 git clone https://github.com/danialrp/danialrp.git
@@ -35,87 +49,85 @@ npm install
 cp env.example .env
 ```
 
-Edit `.env` with your own values:
+Open `.env` and fill in your values:
 
 ```env
 REACT_APP_GITHUB_TOKEN = "your_github_personal_access_token"
-GITHUB_USERNAME        = "danialrp"
+GITHUB_USERNAME        = "your_github_username"
 USE_GITHUB_DATA        = "true"
 REACT_APP_GITLAB_TOKEN = "your_gitlab_read_user_token"
-MEDIUM_USERNAME        = "your_medium_username"   # optional
+MEDIUM_USERNAME        = "your_medium_username"    # optional
 ```
 
-> Generate a GitHub classic token at **Settings → Developer settings → Personal access tokens**. No scopes are required — a plain token is enough.
+> **GitHub token:** go to **Settings → Developer settings → Personal access tokens → Classic**. No scopes are needed — generate a token as-is.
+>
+> **GitLab token:** create a token with only the `read_user` scope.
 
-### 3. Run locally
+### 3. Start the dev server
 
 ```bash
 npm start
 ```
 
-Opens at `http://localhost:3000`.
+Runs at `http://localhost:3000`. API data is fetched automatically before the server starts.
 
 ---
 
-## Available Scripts
+## Scripts
 
-| Command          | Description                              |
-|------------------|------------------------------------------|
-| `npm start`      | Start dev server (fetches API data first)|
-| `npm run build`  | Production build                         |
-| `npm run deploy` | Deploy to GitHub Pages (`master` branch) |
-| `npm test`       | Run tests                                |
-| `npm run format` | Auto-format all JS/CSS/JSON/SCSS files   |
+| Command | Description |
+|---|---|
+| `npm start` | Fetch API data and start dev server |
+| `npm run build` | Production build |
+| `npm run deploy` | Build and deploy to GitHub Pages (`master` branch) |
+| `npm test` | Run test suite |
+| `npm run format` | Auto-format JS / CSS / SCSS / JSON with Prettier |
+| `npm run check-format` | Check formatting without writing |
 
 ---
 
 ## Docker
 
 ```bash
-# Build the image
+# Build
 docker build -t danialrp-portfolio:latest .
 
-# Run the container
+# Run
 docker run -p 3000:3000 \
   -e REACT_APP_GITHUB_TOKEN="your_token" \
-  -e GITHUB_USERNAME="danialrp" \
+  -e GITHUB_USERNAME="your_username" \
   -e USE_GITHUB_DATA="true" \
   danialrp-portfolio:latest
 ```
 
 ---
 
-## Customisation
+## Content
 
-All portfolio content lives in a single file:
+All portfolio data is in one place:
 
 ```
 src/portfolio.js
 ```
 
-Edit the exported objects to update any section:
+| Export | Section |
+|---|---|
+| `greeting` | Name, headline, resume link |
+| `socialMediaLinks` | GitHub, LinkedIn, GitLab, X |
+| `skillsSection` | Skills list and icons |
+| `techStack` | Technology stack display |
+| `workExperience` | Employment history |
+| `bigProjects` | Featured projects |
+| `achievementSection` | Awards and certifications |
+| `contactInfo` | Contact details |
 
-| Object               | Controls                          |
-|----------------------|-----------------------------------|
-| `greeting`           | Name, subtitle, resume link       |
-| `socialMediaLinks`   | GitHub, LinkedIn, GitLab, X, etc. |
-| `skillsSection`      | Skills list and icons             |
-| `workExperience`     | Job history                       |
-| `bigProjects`        | Featured projects                 |
-| `achievementSection` | Certifications & awards           |
-| `contactInfo`        | Contact details                   |
+### Theming
 
-### Global colour scheme
-
-Edit `src/_globalColor.scss` to change the palette site-wide.
+Global colour palette: `src/_globalColor.scss`
 
 ### Resume
 
-Replace the PDF at `public/DanialPanah—SeniorBackendEngineer.pdf` and update `resumeLink` in `src/portfolio.js` to match the new filename.
-
-### Lottie animations
-
-Download a JSON animation from [lottiefiles.com](https://lottiefiles.com) and replace the file in `src/assets/lottie/`. Options can be tuned in `src/components/displayLottie/DisplayLottie.js`.
+Drop a PDF into `public/` and update `resumeLink` in `src/portfolio.js` to match the filename.
 
 ---
 
@@ -123,12 +135,17 @@ Download a JSON animation from [lottiefiles.com](https://lottiefiles.com) and re
 
 ### GitHub Pages
 
-1. Set `homepage` in `package.json` to your GitHub Pages URL.
-2. Run `npm run deploy` — this builds and pushes to the `master` branch automatically.
+Update `homepage` in `package.json` with your Pages URL, then:
+
+```bash
+npm run deploy
+```
 
 ### Netlify / Vercel
 
-Connect the repository and set the build command to `npm run build` with publish directory `build/`. Add your environment variables in the platform's settings UI.
+- Build command: `npm run build`
+- Publish directory: `build/`
+- Add environment variables via the platform dashboard
 
 ---
 
@@ -136,9 +153,17 @@ Connect the repository and set the build command to `npm run build` with publish
 
 ```
 src/
-├── assets/          # Images, Lottie JSON, SVG icons
-├── components/      # Reusable UI components
-├── containers/      # Page sections (greeting, skills, experience…)
-├── portfolio.js     # All portfolio content lives here
-└── _globalColor.scss
+├── assets/           # Images, Lottie JSON, SVG icons
+├── components/       # Shared UI components
+├── containers/       # Page sections (greeting, skills, projects…)
+├── contexts/         # React context (theme)
+├── portfolio.js      # All content configuration
+└── _globalColor.scss # Global colour variables
 ```
+
+---
+
+## Credits
+
+- Lottie animations via [LottieFiles](https://lottiefiles.com)
+- Illustrations via [unDraw](https://undraw.co)
