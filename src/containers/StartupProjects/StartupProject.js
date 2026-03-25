@@ -5,14 +5,6 @@ import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function StartupProject() {
-  function openUrlInNewTab(url) {
-    if (!url) {
-      return;
-    }
-    var win = window.open(url, "_blank");
-    win.focus();
-  }
-
   const {isDark} = useContext(StyleContext);
   if (!bigProjects.display) {
     return null;
@@ -45,11 +37,18 @@ export default function StartupProject() {
                 >
                   {project.image ? (
                     <div className="project-image">
-                      <img
-                        src={project.image}
-                        alt={project.projectName}
-                        className="card-image"
-                      ></img>
+                      <a
+                        href={project.footerLink?.[0]?.url || "#"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-image-link"
+                      >
+                        <img
+                          src={project.image}
+                          alt={project.projectName}
+                          className="card-image"
+                        ></img>
+                      </a>
                     </div>
                   ) : null}
                   <div className="project-detail">
@@ -65,23 +64,6 @@ export default function StartupProject() {
                     >
                       {project.projectDesc}
                     </p>
-                    {project.footerLink ? (
-                      <div className="project-card-footer">
-                        {project.footerLink.map((link, i) => {
-                          return (
-                            <span
-                              key={i}
-                              className={
-                                isDark ? "dark-mode project-tag" : "project-tag"
-                              }
-                              onClick={() => openUrlInNewTab(link.url)}
-                            >
-                              {link.name}
-                            </span>
-                          );
-                        })}
-                      </div>
-                    ) : null}
                   </div>
                 </div>
               );

@@ -262,9 +262,9 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/projects/bryantLogo.png"),
-      projectName: "Bryant Dental",
+      projectName: "Bryant Dental — International",
       projectDesc:
-        "Award-winning e-commerce platform for a UK dental equipment manufacturer, built with Laravel and Vue.js. Features a custom product configurator, quote engine, and content management system. Awwwards Honorable Mention 2018. Dental Industry Awards Best Website 2019.",
+        "Award-winning e-commerce platform for a UK dental equipment manufacturer, built with Laravel and React.js. Features a custom product configurator, quote engine, and content management system. Awwwards Honorable Mention 2018. Dental Industry Awards Best Website 2019.",
       footerLink: [
         {
           name: "Visit Website",
