@@ -75,7 +75,8 @@
 /* ── code body ── */
 .code-body {
   padding: 14px 0;
-  min-height: 220px;
+  height: 420px;
+  overflow: hidden;
 }
 
 .code-line {
@@ -214,5 +215,9 @@
 
   .code-window {
     font-size: 12px;
+  }
+
+  .code-body {
+    height: 378px;
   }
 }

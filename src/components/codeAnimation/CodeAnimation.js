@@ -31,7 +31,7 @@ const CODE_LINES = [
   {indent: 2, tokens: [{text: "Since: ", type: "prop"}, {text: "2015", type: "number"}, {text: ",", type: "punct"}]},
   {indent: 2, tokens: [{text: "Stack: ", type: "prop"}, {text: '[]', type: "punct"}, {text: "string", type: "keyword"}, {text: "{", type: "punct"}, {text: '"Go"', type: "string"}, {text: ", ", type: "punct"}, {text: '"Python"', type: "string"}, {text: ", ", type: "punct"}, {text: '"Laravel"', type: "string"}, {text: "},", type: "punct"}]},
   {indent: 1, tokens: [{text: "}", type: "punct"}]},
-  // {indent: 1, tokens: [{text: "d", type: "var"}, {text: ".", type: "punct"}, {text: "Build", type: "fn"}, {text: "()", type: "punct"}]},
+  {indent: 1, tokens: [{text: "d", type: "var"}, {text: ".", type: "punct"}, {text: "Build", type: "fn"}, {text: "()", type: "punct"}]},
   {indent: 0, tokens: [{text: "}", type: "punct"}]},
 ];
 
