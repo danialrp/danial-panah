@@ -17,7 +17,7 @@ const greeting = {
   username: "danial panah",
   title: "Danial Panah",
   subTitle: emoji(
-    "Senior Backend Engineer with production-grade experience in Go, Python and PHP/Laravel — building scalable APIs, real-time systems, ERP integrations, and crypto exchange platforms since 2015. 🚀"
+    "Senior Backend Engineer with production-grade experience in Go, Python and Laravel — building scalable APIs, real-time systems, ERP integrations, and crypto exchange platforms since 2015. 🚀"
   ),
   resumeLink: "/DanialPanah—SeniorBackendEngineer.pdf",
   displayGreeting: true
@@ -142,17 +142,17 @@ const techStack = {
       progressPercentage: "95%"
     },
     {
-      Stack: "PHP / Laravel",
-      progressPercentage: "90%"
-    },
-    {
       Stack: "Go (Golang)",
       progressPercentage: "80%"
     },
     {
       Stack: "Python / Django / FastAPI",
       progressPercentage: "65%"
-    }
+    },
+    {
+      Stack: "PHP / Laravel",
+      progressPercentage: "90%"
+    },
   ],
   displayCodersrank: false
 };
@@ -168,10 +168,10 @@ const workExperiences = {
       date: "Jan 2023 – Mar 2026",
       desc: "Built a full-stack internal CRM and logistics management platform from scratch. Designed a DB-driven RBAC system, async ERP integration with JTL Webservice, real-time messaging hub, and parcel tracking with QR-code item management.",
       descBullets: [
-        "Laravel 10 / PHP 8.x, PostgreSQL (72+ migrations), Redis, Docker",
+        // "Laravel 10 / PHP 8.x, PostgreSQL (72+ migrations), Redis, Docker",
+        "Multi-tenant architecture with DB-driven runtime RBAC across 30+ service classes",
         "Real-time features via Laravel Reverb (WebSockets) and Livewire 3",
         // "14+ automated background jobs via Laravel Horizon queue workers",
-        "Multi-tenant architecture with DB-driven runtime RBAC across 30+ service classes",
         // "JTL ERP integration via Guzzle — async company, user, and role data sync",
         "Full messaging hub: IMAP inbox polling, SMTP outbound, auto-routing rules engine"
       ]
@@ -225,18 +225,6 @@ const bigProjects = {
   subtitle: "PRODUCTION SYSTEMS AND PLATFORMS BUILT ACROSS FINTECH, CRYPTO, LOGISTICS AND ENTERPRISE",
   projects: [
     {
-      image: require("./assets/images/projects/subkeLogo.png"),
-      projectName: "Subke CRM & Logistics Platform",
-      projectDesc:
-        "Full-stack internal CRM and logistics management system. Multi-tenant architecture with DB-driven RBAC, real-time messaging hub, parcel tracking, QR-code item management, JTL ERP integration, and 30+ domain service classes across 72+ DB migrations.",
-      footerLink: [
-        {
-          name: "Visit Website",
-          url: "https://www.subke.com/en/"
-        }
-      ]
-    },
-    {
       image: require("./assets/images/projects/cryhubLogo.png"),
       projectName: "CryHub — Real-Time Market Data Platform",
       projectDesc:
@@ -257,6 +245,18 @@ const bigProjects = {
         {
           name: "Visit Website",
           url: "https://irbtc.com"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/projects/subkeLogo.png"),
+      projectName: "Subke CRM & Logistics Platform",
+      projectDesc:
+        "Full-stack internal CRM and logistics management system. Multi-tenant architecture with DB-driven RBAC, real-time messaging hub, parcel tracking, QR-code item management, JTL ERP integration, and 30+ domain service classes across 72+ DB migrations.",
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://www.subke.com/en/"
         }
       ]
     },
