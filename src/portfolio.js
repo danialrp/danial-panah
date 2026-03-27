@@ -40,7 +40,7 @@ const skillsSection = {
     "SENIOR BACKEND ENGINEER SPECIALISING IN GOLANG, PYTHON, LARAVEL AND SCALABLE DISTRIBUTED SYSTEMS",
   skills: [
     emoji(
-      "⚡ Architect and build production-grade REST APIs and backend systems using Go, Python and PHP/Laravel"
+      "⚡ Architect and build production-grade REST APIs and backend systems using Go, Python and Laravel"
     ),
     emoji(
       "⚡ Design real-time event-driven microservices with WebSockets, NATS JetStream, and Redis queue systems"
@@ -59,24 +59,44 @@ const skillsSection = {
       iconKey: "python"
     },
     {
+      skillName: "Node.js",
+      iconKey: "nodejs"
+    },
+    {
       skillName: "Laravel",
       iconKey: "laravel"
     },
     {
-      skillName: "PHP",
-      iconKey: "php"
+      skillName: "FastAPI",
+      iconKey: "fastapi"
     },
     {
-      skillName: "PostgreSQL",
-      iconKey: "postgresql"
+      skillName: "WebSocket",
+      iconKey: "websocket"
     },
     {
       skillName: "Redis",
       iconKey: "redis"
     },
     {
+      skillName: "NATS JetStream",
+      iconKey: "nats"
+    },
+    {
+      skillName: "PostgreSQL",
+      iconKey: "postgresql"
+    },
+    {
       skillName: "Docker",
       iconKey: "docker"
+    },
+    {
+      skillName: "PHP",
+      iconKey: "php"
+    },
+    {
+      skillName: "Vue.js",
+      iconKey: "vuejs"
     },
     {
       skillName: "AWS",
@@ -85,26 +105,6 @@ const skillsSection = {
     {
       skillName: "Git",
       iconKey: "git"
-    },
-    {
-      skillName: "Vue.js",
-      iconKey: "vuejs"
-    },
-    {
-      skillName: "Node.js",
-      iconKey: "nodejs"
-    },
-    {
-      skillName: "FastAPI",
-      iconKey: "fastapi"
-    },
-    {
-      skillName: "NATS JetStream",
-      iconKey: "nats"
-    },
-    {
-      skillName: "WebSocket",
-      iconKey: "websocket"
     }
   ],
   display: true

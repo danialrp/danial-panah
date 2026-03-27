@@ -35,13 +35,34 @@
 
   &[name="Python"] .tech-icon,
   &[name="PostgreSQL"] .tech-icon {
-    font-size: 2.6rem;
+    font-size: calc(3rem - 6px);
   }
 
   &[name="Laravel"] .tech-icon {
     font-size: calc(3rem - 2px);
   }
+
   &[name="Redis"] .tech-icon {
     font-size: calc(3rem - 5px);
+  }
+
+  &[name="Node.js"] .tech-icon {
+    font-size: calc(3rem - 2px);
+  }
+
+  &[name="FastAPI"] .tech-icon {
+    font-size: calc(3rem - 3px);
+  }
+
+  &[name="NATS JetStream"] .tech-icon {
+    font-size: calc(3rem - 4px);
+  }
+
+  &[name="PostgreSQL"] .tech-icon {
+    font-size: calc(3rem - 4px);
+  }
+
+  &[name="Vue.js"] .tech-icon {
+    font-size: calc(3rem - 4px);
   }
 }
