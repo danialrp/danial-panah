@@ -163,17 +163,29 @@ const workExperiences = {
   experience: [
     {
       role: "Senior Backend Developer",
+      company: "CryHub",
+      companylogo: require("./assets/images/companies/cryhubLogo.png"),
+      date: "Apr 2024 – Apr 2026",
+      desc: "Architected and implemented a high-throughput, event-driven microservices platform for real-time cryptocurrency market data ingestion, aggregation, and fan-out distribution at scale.",
+      descBullets: [
+        "Go, NATS JetStream, Redis, PostgreSQL (TimescaleDB), WebSocket, Python, Docker Compose",
+        "Designed a 4-service event-driven pipeline with dual connection strategy, always-on for high-frequency streams, lazy self-terminating for low-frequency ones",
+        "Built a thread-safe pub/sub hub in Go with 8-stream NATS JetStream topology and 4-database Redis layout for isolated caching, aggregation, and rate limiting"
+      ]
+    },
+    {
+      role: "Senior Backend Developer",
       company: "Subke GmbH",
       companylogo: require("./assets/images/companies/subkeLogo.png"),
       date: "Jan 2023 – Mar 2024",
       desc: "Built a full-stack internal CRM and logistics management platform from scratch. Designed a DB-driven RBAC system, async ERP integration with JTL Webservice, real-time messaging hub, and parcel tracking with QR-code item management.",
       descBullets: [
-        // "Laravel 10 / PHP 8.x, PostgreSQL (72+ migrations), Redis, Docker",
+        "Laravel 10, Python, PostgreSQL, Redis, Docker",
         "Multi-tenant architecture with DB-driven runtime RBAC across 30+ service classes",
         "Real-time features via Laravel Reverb (WebSockets) and Livewire 3",
         // "14+ automated background jobs via Laravel Horizon queue workers",
-        // "JTL ERP integration via Guzzle — async company, user, and role data sync",
-        "Full messaging hub: IMAP inbox polling, SMTP outbound, auto-routing rules engine"
+        // "JTL ERP integration via Guzzle, async company, user, and role data sync",
+        "Full messaging hub: IMAP inbox polling, SMTP outbound, auto-routing rules engine, with Python-based processing",
       ]
     },
     {
@@ -181,10 +193,13 @@ const workExperiences = {
       company: "The Bolt",
       companylogo: require("./assets/images/companies/theBoltLogo.png"),
       date: "Jan 2022 – Jul 2022",
-      desc: "Led backend team across 5+ simultaneous projects. Built and deployed Laravel applications including a vehicle sales CRM and multiple custom CMS platforms for UK clients.",
+      desc: "Led and coordinated backend development across 5+ simultaneous client projects, overseeing architecture decisions, code quality, and delivery timelines. Built and deployed full-stack Laravel applications for UK-based clients across automotive, clinical, financial, and industrial sectors.",
       descBullets: [
-        "AutoASX: vehicle sales CRM with advanced search and financial calculators",
-        "Clinical Services International, ESS Packaging, Efficient Frontiers, Record Financial Group — custom Laravel CMS platforms"
+        "AutoASX: vehicle sales CRM built from scratch, client and dealer panels, advanced search across thousands of vehicles, financial calculation tools, and external API/webservice integration for live vehicle data",
+        "Clinical Services International: custom Laravel CMS for a clinical trial supply organisation",
+        "ESS Packaging: custom Laravel CMS for an industrial packaging group",
+        // "Efficient Frontiers International: custom Laravel CMS for a financial crime prevention advisory firm",
+        // "Record Financial Group: custom Laravel CMS for a financial investment group"
       ]
     },
     /*{
@@ -203,11 +218,11 @@ const workExperiences = {
       company: "Kappa London",
       companylogo: require("./assets/images/companies/kappaLogo.png"),
       date: "Apr 2020 – May 2021",
-      desc: "Built and maintained Laravel RESTful APIs, PHP e-commerce systems, and deployed applications on LEMP/LAMP stack servers.",
+      desc: "Built and maintained Laravel RESTful API applications and PHP e-commerce systems for UK-based clients. Handled full deployment lifecycle on LEMP/LAMP stack servers, including server configuration, maintenance, and RESTful integration with third-party services.",
       descBullets: [
-        "Bryant Dental: award-winning e-commerce (Awwwards HM 2018, Dental Industry Awards 2019)",
-        "Bloomd: Oxford University social network with chat, video/voice calls, and mentor matching",
-        "Nova AI: NHS-compliant centralised dentistry management platform"
+        "Bryant Dental: award-winning e-commerce for a UK dental equipment manufacturer - Awwwards HM 2018, Dental Industry Awards Best Website 2019",
+        "Bloomd: Oxford University social network with chat, video/voice calls, and mentor-to-mentee matching",
+        "Nova AI: NHS-compliant dentistry management platform covering appointments, diagnoses, financials, and communications"
       ]
     }
   ]
