@@ -3,8 +3,9 @@ import "./SplashScreen.css";
 
 const STACKS = [
   {name: "Go", color: "#00acd7"},
-  {name: "Python", color: "#3776ab"},
-  {name: "Laravel", color: "#ff2d20"},
+  {name: "Python", color: "#FFD43B"},
+  // {name: "Laravel", color: "#ff2d20"},
+  {name: "Node.js", color: "#339933"},
   {name: "Docker", color: "#2496ed"},
   {name: "Redis", color: "#dc382d"},
   {name: "PostgreSQL", color: "#336791"}
