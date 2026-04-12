@@ -5,7 +5,8 @@ import "./ArchAnimation.scss";
 const LANGS = [
   {name: "Go", color: "#89dceb"},
   {name: "Python", color: "#f9e2af"},
-  {name: "Laravel", color: "#cba6f7"},
+  // {name: "Laravel", color: "#cba6f7"},
+  {name: "Node.js", color: "#339933"},
 ];
 
 export default function ArchAnimation() {

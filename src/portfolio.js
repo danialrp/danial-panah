@@ -143,15 +143,15 @@ const techStack = {
     },
     {
       Stack: "Go (Golang)",
-      progressPercentage: "80%"
+      progressPercentage: "90%"
     },
     {
       Stack: "Python / Django / FastAPI",
       progressPercentage: "75%"
     },
     {
-      Stack: "Laravel",
-      progressPercentage: "90%"
+      Stack: "JavaScript / Node.js",
+      progressPercentage: "80%"
     },
   ],
   displayCodersrank: false
