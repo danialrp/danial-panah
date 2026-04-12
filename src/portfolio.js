@@ -17,7 +17,7 @@ const greeting = {
   username: "danial panah",
   title: "Danial Panah",
   subTitle: emoji(
-    "Senior Backend Engineer with production-grade experience in Go, Python and Laravel — building scalable APIs, real-time systems, ERP integrations, and crypto exchange platforms since 2015. 🚀"
+    "Senior Backend Engineer building AI-integrated systems, real-time data pipelines, and scalable APIs in Go, Python and Node.js since 2015. From Web3 trading platforms to LLM-powered services. 🚀"
   ),
   resumeLink: "/DanialPanah—SeniorBackendEngineer.pdf",
   displayGreeting: true
@@ -37,16 +37,16 @@ const socialMediaLinks = {
 const skillsSection = {
   title: "What I Do",
   subTitle:
-    "SENIOR BACKEND ENGINEER SPECIALISING IN GOLANG, PYTHON, LARAVEL AND SCALABLE DISTRIBUTED SYSTEMS",
+    "SENIOR BACKEND ENGINEER SPECIALISING IN GOLANG, PYTHON, NODE.JS AND SCALABLE DISTRIBUTED SYSTEMS",
   skills: [
     emoji(
-      "⚡ Architect and build production-grade REST APIs and backend systems using Go, Python and Laravel"
+      "⚡ Architect and build production-grade REST APIs, AI-integrated backends, and LLM-powered services using Go, Python and Laravel"
     ),
     emoji(
-      "⚡ Design real-time event-driven microservices with WebSockets, NATS JetStream, and Redis queue systems"
+      "⚡ Design real-time event-driven microservices with WebSockets, NATS JetStream, Redis queue systems and Node.js"
     ),
     emoji(
-      "⚡ Deliver multi-tenant SaaS platforms, ERP integrations, fintech payment pipelines, and crypto exchange backends"
+      "⚡ Deliver multi-tenant SaaS platforms, fintech payment pipelines, Web3 exchange backends, and AI-powered platform integrations"
     )
   ],
   softwareSkills: [
@@ -147,10 +147,10 @@ const techStack = {
     },
     {
       Stack: "Python / Django / FastAPI",
-      progressPercentage: "65%"
+      progressPercentage: "75%"
     },
     {
-      Stack: "PHP / Laravel",
+      Stack: "Laravel",
       progressPercentage: "90%"
     },
   ],
@@ -165,7 +165,7 @@ const workExperiences = {
       role: "Senior Backend Developer",
       company: "Subke GmbH",
       companylogo: require("./assets/images/companies/subkeLogo.png"),
-      date: "Jan 2023 – Mar 2026",
+      date: "Jan 2023 – Mar 2024",
       desc: "Built a full-stack internal CRM and logistics management platform from scratch. Designed a DB-driven RBAC system, async ERP integration with JTL Webservice, real-time messaging hub, and parcel tracking with QR-code item management.",
       descBullets: [
         // "Laravel 10 / PHP 8.x, PostgreSQL (72+ migrations), Redis, Docker",
@@ -187,7 +187,7 @@ const workExperiences = {
         "Clinical Services International, ESS Packaging, Efficient Frontiers, Record Financial Group — custom Laravel CMS platforms"
       ]
     },
-    {
+    /*{
       role: "Senior Laravel Developer",
       company: "Matter of Software",
       companylogo: require("./assets/images/companies/matterLogo.png"),
@@ -197,9 +197,9 @@ const workExperiences = {
         "RFID Asset Management: extended snipe-it with RFID scanner integration and RESTful API layer",
         "ORCA: logistics management platform for reusable container supply chain tracking"
       ]
-    },
+    },*/
     {
-      role: "PHP Laravel Developer & DevOps",
+      role: "Laravel Developer & DevOps",
       company: "Kappa London",
       companylogo: require("./assets/images/companies/kappaLogo.png"),
       date: "Apr 2020 – May 2021",
@@ -222,13 +222,13 @@ const openSource = {
 // Big Projects Section
 const bigProjects = {
   title: "Notable Projects",
-  subtitle: "PRODUCTION SYSTEMS AND PLATFORMS BUILT ACROSS FINTECH, CRYPTO, LOGISTICS AND ENTERPRISE",
+  subtitle: "PRODUCTION SYSTEMS AND PLATFORMS BUILT ACROSS FINTECH, WEB3, LOGISTICS AND ENTERPRISE",
   projects: [
     {
       image: require("./assets/images/projects/cryhubLogo.png"),
       projectName: "CryHub — Real-Time Market Data Platform",
       projectDesc:
-        "High-throughput event-driven microservices platform for real-time crypto market data ingestion and fan-out distribution. Built with Go, NATS JetStream, TimescaleDB, Redis, WebSocket. 4-service pipeline, 8-stream NATS topology, thread-safe pub/sub hub.",
+        "High-throughput event-driven microservices platform for real-time trading market data ingestion and fan-out distribution. Built with Go, NATS JetStream, TimescaleDB, Redis, WebSocket. 4-service pipeline, 8-stream NATS topology, thread-safe pub/sub hub.",
       footerLink: [
         {
           name: "Visit Website",
@@ -238,9 +238,9 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/projects/irbtcLogo.png"),
-      projectName: "IRBTC — Cryptocurrency Exchange",
+      projectName: "IRBTC - Trading Exchange Platform",
       projectDesc:
-        "Production-grade crypto exchange backend handling fiat/crypto trading, KYC identity verification, and financial transaction processing. Built with Laravel 10, PostgreSQL, Redis, AWS S3. 90+ services, 28 contract-based interfaces, Huobi (HTX) integration.",
+        "Production-grade trading exchange backend handling fiat/crypto trading, KYC identity verification, and financial transaction processing. Built with Laravel 10, PostgreSQL, Redis, AWS S3. 90+ services, 28 contract-based interfaces, Huobi (HTX) integration.",
       footerLink: [
         {
           name: "Visit Website",
