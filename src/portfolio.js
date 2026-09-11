@@ -2,15 +2,15 @@ import emoji from "react-easy-emoji";
 import splashAnimation from "./assets/lottie/splashAnimation";
 
 // Splash Screen: off for the build-time prerenderer, and off when the page arrives
-// prerendered (production), so the first paint is the real content and hydration matches.
+// prerendered (production), so the first paint is the real content.
 const isPrerender =
   typeof navigator !== "undefined" && /Prerender/.test(navigator.userAgent);
-const isHydrating =
+const isPrerenderedPage =
   typeof document !== "undefined" &&
   document.getElementById("root") &&
   document.getElementById("root").hasChildNodes();
 const splashScreen = {
-  enabled: !isPrerender && !isHydrating,
+  enabled: !isPrerender && !isPrerenderedPage,
   animation: splashAnimation,
   duration: 1500
 };
