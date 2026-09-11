@@ -1,11 +1,18 @@
 import emoji from "react-easy-emoji";
 import splashAnimation from "./assets/lottie/splashAnimation";
 
-// Splash Screen
+// Splash Screen: off for the build-time prerenderer, and off when the page arrives
+// prerendered (production), so the first paint is the real content and hydration matches.
+const isPrerender =
+  typeof navigator !== "undefined" && /Prerender/.test(navigator.userAgent);
+const isHydrating =
+  typeof document !== "undefined" &&
+  document.getElementById("root") &&
+  document.getElementById("root").hasChildNodes();
 const splashScreen = {
-  enabled: true,
+  enabled: !isPrerender && !isHydrating,
   animation: splashAnimation,
-  duration: 3600
+  duration: 1500
 };
 
 // Summary And Greeting Section
@@ -17,9 +24,9 @@ const greeting = {
   username: "danial panah",
   title: "Danial Panah",
   subTitle: emoji(
-    "Senior Backend Engineer building AI-integrated systems, real-time data pipelines, and scalable APIs in Go, Python and Node.js since 2015. From Web3 trading platforms to LLM-powered services. 🚀"
+    "Senior AI / Machine Learning Engineer building LLM applications, agentic systems, RAG and MLOps on 10+ years of backend engineering. 🚀"
   ),
-  resumeLink: "/DanialPanah—SeniorBackendEngineer.pdf",
+  resumeLink: "/DanialPanah.pdf",
   displayGreeting: true
 };
 
@@ -37,75 +44,36 @@ const socialMediaLinks = {
 const skillsSection = {
   title: "What I Do",
   subTitle:
-    "SENIOR BACKEND ENGINEER SPECIALISING IN GOLANG, PYTHON, NODE.JS AND SCALABLE DISTRIBUTED SYSTEMS",
+    "Senior AI / Machine Learning Engineer building LLM applications, agentic systems, RAG pipelines and the MLOps behind them",
   skills: [
     emoji(
-      "⚡ Architect and build production-grade REST APIs, AI-integrated backends, and LLM-powered services using Go, Python and Laravel"
+      "⚡ Build LLM applications and agentic, tool-calling systems that run in production, with evals, guardrails and hard cost controls"
     ),
     emoji(
-      "⚡ Design real-time event-driven microservices with WebSockets, NATS JetStream, Redis queue systems and Node.js"
+      "⚡ Design RAG pipelines and fine-tune open-weight models (LoRA/QLoRA), from chunking and embeddings to reranking and semantic caching"
     ),
     emoji(
-      "⚡ Deliver multi-tenant SaaS platforms, fintech payment pipelines, Web3 exchange backends, and AI-powered platform integrations"
+      "⚡ Ship and operate models on AWS and Azure with Docker, Kubernetes, CI/CD and monitoring for latency, cost and error rate"
     )
   ],
   softwareSkills: [
-    {
-      skillName: "Go",
-      iconKey: "go"
-    },
-    {
-      skillName: "Python",
-      iconKey: "python"
-    },
-    {
-      skillName: "Node.js",
-      iconKey: "nodejs"
-    },
-    {
-      skillName: "Laravel",
-      iconKey: "laravel"
-    },
-    {
-      skillName: "FastAPI",
-      iconKey: "fastapi"
-    },
-    {
-      skillName: "WebSocket",
-      iconKey: "websocket"
-    },
-    {
-      skillName: "Redis",
-      iconKey: "redis"
-    },
-    {
-      skillName: "NATS JetStream",
-      iconKey: "nats"
-    },
-    {
-      skillName: "PostgreSQL",
-      iconKey: "postgresql"
-    },
-    {
-      skillName: "Docker",
-      iconKey: "docker"
-    },
-    {
-      skillName: "PHP",
-      iconKey: "php"
-    },
-    {
-      skillName: "Vue.js",
-      iconKey: "vuejs"
-    },
-    {
-      skillName: "AWS",
-      iconKey: "aws"
-    },
-    {
-      skillName: "Git",
-      iconKey: "git"
-    }
+    {skillName: "Python", iconKey: "python"},
+    {skillName: "PyTorch", iconKey: "pytorch"},
+    {skillName: "LangChain", iconKey: "langchain"},
+    {skillName: "Hugging Face", iconKey: "huggingface"},
+    {skillName: "Anthropic Claude", iconKey: "anthropic"},
+    {skillName: "OpenAI", iconKey: "openai"},
+    {skillName: "FastAPI", iconKey: "fastapi"},
+    {skillName: "PostgreSQL / pgvector", iconKey: "postgresql"},
+    {skillName: "Redis", iconKey: "redis"},
+    {skillName: "NATS JetStream", iconKey: "nats"},
+    {skillName: "Docker", iconKey: "docker"},
+    {skillName: "Kubernetes", iconKey: "kubernetes"},
+    {skillName: "AWS", iconKey: "aws"},
+    {skillName: "Azure", iconKey: "azure"},
+    {skillName: "MLflow", iconKey: "mlflow"},
+    {skillName: "Go", iconKey: "go"},
+    {skillName: "TypeScript", iconKey: "typescript"}
   ],
   display: true
 };
@@ -115,19 +83,19 @@ const educationInfo = {
   display: true,
   schools: [
     {
-      schoolName: "Azad University — Science and Research Branch",
+      schoolName: "Azad University, Science and Research Branch",
       logo: require("./assets/images/azadLogo.png"),
       subHeader: "M.Sc. Computer Software Engineering",
-      duration: "Graduated 2015",
-      desc: "Postgraduate research in software engineering, systems architecture, and advanced programming methodologies.",
+      duration: "2015",
+      desc: "Postgraduate work in software engineering and systems architecture.",
       descBullets: []
     },
     {
       schoolName: "Azad University",
       logo: require("./assets/images/azadLogo.png"),
       subHeader: "B.Sc. Computer Engineering",
-      duration: "Graduated 2010",
-      desc: "Undergraduate foundation in computer engineering, algorithms, data structures, and software development.",
+      duration: "2010",
+      desc: "Computer engineering, algorithms, data structures and software development.",
       descBullets: []
     }
   ]
@@ -138,21 +106,25 @@ const techStack = {
   viewSkillBars: true,
   experience: [
     {
-      Stack: "Backend Architecture / APIs / WebSockets",
-      progressPercentage: "95%"
-    },
-    {
-      Stack: "Go (Golang)",
+      Stack: "LLM Applications & Agentic Systems",
       progressPercentage: "90%"
     },
     {
-      Stack: "Python / Django / FastAPI",
-      progressPercentage: "75%"
+      Stack: "RAG, Embeddings & Vector Search",
+      progressPercentage: "85%"
     },
     {
-      Stack: "JavaScript / Node.js",
+      Stack: "ML & Fine-Tuning (PyTorch, LoRA/QLoRA)",
       progressPercentage: "80%"
     },
+    {
+      Stack: "MLOps & Cloud (Docker, Kubernetes, AWS, Azure)",
+      progressPercentage: "85%"
+    },
+    {
+      Stack: "Backend & Distributed Systems (Go, Python)",
+      progressPercentage: "95%"
+    }
   ],
   displayCodersrank: false
 };
@@ -162,30 +134,30 @@ const workExperiences = {
   display: true,
   experience: [
     {
-      role: "Senior Backend Developer",
+      role: "Senior Backend Engineer",
       company: "CryHub",
       companylogo: require("./assets/images/companies/cryhubLogo.png"),
-      date: "Apr 2024 – Apr 2026",
-      desc: "Architected and implemented a high-throughput, event-driven microservices platform for real-time cryptocurrency market data ingestion, aggregation, and fan-out distribution at scale.",
+      date: "Jan 2026 – Aug 2026",
+      desc: "LLM-driven anomaly detection on real-time crypto market data, on top of an event-driven microservices platform I owned end to end.",
       descBullets: [
-        "Go, NATS JetStream, Redis, PostgreSQL (TimescaleDB), WebSocket, Python, Docker Compose",
-        "Designed a 4-service event-driven pipeline with dual connection strategy, always-on for high-frequency streams, lazy self-terminating for low-frequency ones",
-        "Built a thread-safe pub/sub hub in Go with 8-stream NATS JetStream topology and 4-database Redis layout for isolated caching, aggregation, and rate limiting"
+        "Designed and shipped the LLM-driven anomaly and pattern detection pipeline on real-time crypto market data, built on the Anthropic Claude API; it replaced manual review.",
+        "Owned the platform architecture end to end: a 4-service event-driven pipeline on an 8-stream NATS JetStream topology, built for high-throughput real-time data (Go, Redis, TimescaleDB).",
+        "Built the pub/sub WebSocket layer that manages concurrent client connections and broadcasts market events.",
+        "Split Redis across 4 databases (caching, aggregation state, rate limiting, connection tracking) and persisted time-series data in TimescaleDB.",
+        "Containerized the full stack for dev/prod parity; day-to-day development in Claude Code and Cursor."
       ]
     },
     {
-      role: "Senior Backend Developer",
+      role: "Senior Backend Engineer",
       company: "Subke GmbH",
       companylogo: require("./assets/images/companies/subkeLogo.png"),
-      date: "Jan 2023 – Mar 2024",
-      desc: "Built a full-stack internal CRM and logistics management platform from scratch. Designed a DB-driven RBAC system, async ERP integration with JTL Webservice, real-time messaging hub, and parcel tracking with QR-code item management.",
+      date: "Jan 2023 – Jan 2026",
+      desc: "Multi-tenant enterprise CRM and logistics platform for a Hamburg logistics company, delivered remotely.",
       descBullets: [
-        "Laravel 10, Python, PostgreSQL, Redis, Docker",
-        "Multi-tenant architecture with DB-driven runtime RBAC across 30+ service classes",
-        "Real-time features via Laravel Reverb (WebSockets) and Livewire 3",
-        // "14+ automated background jobs via Laravel Horizon queue workers",
-        // "JTL ERP integration via Guzzle, async company, user, and role data sync",
-        "Full messaging hub: IMAP inbox polling, SMTP outbound, auto-routing rules engine, with Python-based processing",
+        "Delivered a multi-tenant enterprise CRM and logistics platform: 30+ domain service classes across 72+ migrations. Paired AI-assisted development (ChatGPT, Cursor) with code written by hand, which sped up delivery without loosening architecture standards.",
+        "Ran RBAC off a database-driven runtime model and moved JTL ERP synchronization and 14+ scheduled jobs to asynchronous queued background processing.",
+        "Built a real-time messaging hub with IMAP/SMTP processing, an auto-routing rules engine and live notifications.",
+        "Shipped QR-code parcel tracking and multi-language localization, and wrote the automated deployment commands for staging and production."
       ]
     },
     {
@@ -193,36 +165,45 @@ const workExperiences = {
       company: "The Bolt",
       companylogo: require("./assets/images/companies/theBoltLogo.png"),
       date: "Jan 2022 – Jul 2022",
-      desc: "Led and coordinated backend development across 5+ simultaneous client projects, overseeing architecture decisions, code quality, and delivery timelines. Built and deployed full-stack Laravel applications for UK-based clients across automotive, clinical, financial, and industrial sectors.",
+      desc: "Backend lead for a London agency shipping full-stack applications to clients in automotive, clinical and industrial sectors.",
       descBullets: [
-        "AutoASX: vehicle sales CRM built from scratch, client and dealer panels, advanced search across thousands of vehicles, financial calculation tools, and external API/webservice integration for live vehicle data",
-        "Clinical Services International: custom Laravel CMS for a clinical trial supply organisation",
-        "ESS Packaging: custom Laravel CMS for an industrial packaging group",
-        // "Efficient Frontiers International: custom Laravel CMS for a financial crime prevention advisory firm",
-        // "Record Financial Group: custom Laravel CMS for a financial investment group"
+        "Led backend architecture across 5+ concurrent client projects, among them a vehicle sales CRM, a clinical services platform and an industrial packaging system.",
+        "Set code-quality standards and delivery timelines for the team shipping those full-stack applications.",
+        "Delivered the AutoASX vehicle sales CRM with client and dealer panels, search across thousands of vehicles, financial calculators and live vehicle data from external APIs."
       ]
     },
-    /*{
+    {
       role: "Senior Laravel Developer",
       company: "Matter of Software",
       companylogo: require("./assets/images/companies/matterLogo.png"),
       date: "May 2021 – Sep 2021",
-      desc: "Developed and maintained Laravel web applications and RESTful APIs for UK logistics and asset management clients.",
+      desc: "Logistics and asset-management software for UK clients.",
       descBullets: [
-        "RFID Asset Management: extended snipe-it with RFID scanner integration and RESTful API layer",
-        "ORCA: logistics management platform for reusable container supply chain tracking"
+        "Extended an existing asset management platform with RFID scanner integration and a REST API layer for mobile connectivity.",
+        "Built a logistics platform that tracks reusable containers through inventory, warehousing, washing and repair."
       ]
-    },*/
+    },
     {
-      role: "Laravel Developer & DevOps",
+      role: "Backend Developer & DevOps",
       company: "Kappa London",
       companylogo: require("./assets/images/companies/kappaLogo.png"),
       date: "Apr 2020 – May 2021",
-      desc: "Built and maintained Laravel RESTful API applications and PHP e-commerce systems for UK-based clients. Handled full deployment lifecycle on LEMP/LAMP stack servers, including server configuration, maintenance, and RESTful integration with third-party services.",
+      desc: "E-commerce, healthcare and social platforms for UK clients, plus deployment and server operations.",
       descBullets: [
-        "Bryant Dental: award-winning e-commerce for a UK dental equipment manufacturer - Awwwards HM 2018, Dental Industry Awards Best Website 2019",
-        "Bloomd: Oxford University social network with chat, video/voice calls, and mentor-to-mentee matching",
-        "Nova AI: NHS-compliant dentistry management platform covering appointments, diagnoses, financials, and communications"
+        "Delivered the award-winning Bryant Dental e-commerce platform (Awwwards Honorable Mention 2018, Dental Industry Awards Best Website 2019).",
+        "Built a social network for Oxford University with appointments, direct chat, and video/voice calls.",
+        "Shipped an NHS-compliant dentistry management platform that handles appointments, diagnoses, financials and communications."
+      ]
+    },
+    {
+      role: "Laravel Developer, Project Manager & DevOps",
+      company: "Teknet Ltd",
+      companylogo: require("./assets/images/companies/teknetLogo.png"),
+      date: "Jun 2018 – Jan 2020",
+      desc: "Enterprise project management and scheduling systems for UK clients, from architecture to deployment.",
+      descBullets: [
+        "Led backend architecture for an enterprise project management system with CRM, accounting, GPS, scheduling and stock management modules.",
+        "Launched an online scheduling and reservation system with PayPal payments and invoicing."
       ]
     }
   ]
@@ -230,20 +211,22 @@ const workExperiences = {
 
 // Open Source Section
 const openSource = {
-  showGithubProfile: "true",
+  showGithubProfile: "false",
+  // Pinned repos are hidden until the GitHub pins point at AI work; the activity chart still shows.
+  showRepos: false,
   display: true
 };
 
 // Big Projects Section
 const bigProjects = {
   title: "Notable Projects",
-  subtitle: "PRODUCTION SYSTEMS AND PLATFORMS BUILT ACROSS FINTECH, WEB3, LOGISTICS AND ENTERPRISE",
+  subtitle: "Production AI systems and the platforms underneath them",
   projects: [
     {
       image: require("./assets/images/projects/cryhubLogo.png"),
-      projectName: "CryHub — Real-Time Market Data Platform",
+      projectName: "CryHub: LLM Anomaly Detection on Live Market Data",
       projectDesc:
-        "High-throughput event-driven microservices platform for real-time trading market data ingestion and fan-out distribution. Built with Go, NATS JetStream, TimescaleDB, Redis, WebSocket. 4-service pipeline, 8-stream NATS topology, thread-safe pub/sub hub.",
+        "LLM-driven pipeline that detects anomalies and patterns in real-time crypto market data and replaced manual review. Built on the Anthropic Claude API over a 4-service event-driven platform: Go, NATS JetStream (8 streams), Redis, TimescaleDB, WebSockets.",
       footerLink: [
         {
           name: "Visit Website",
@@ -252,22 +235,17 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/projects/irbtcLogo.png"),
-      projectName: "IRBTC - Trading Exchange Platform",
+      image: require("./assets/images/projects/copilotLogo.png"),
+      projectName: "AI Job-Application Co-Pilot",
       projectDesc:
-        "Production-grade trading exchange backend handling fiat/crypto trading, KYC identity verification, and financial transaction processing. Built with Laravel 10, PostgreSQL, Redis, AWS S3. 90+ services, 28 contract-based interfaces, Huobi (HTX) integration.",
-      footerLink: [
-        {
-          name: "Visit Website",
-          url: "https://irbtc.com"
-        }
-      ]
+        "Self-built platform that ingests job postings and drafts tailored resumes and screening answers, every claim traced back to a structured profile; a human reviews and submits each application. OpenRouter routing across three model tiers with automatic fallback and hard budget caps, a 3-layer cache (exact match, pgvector embeddings, provider prompt cache), and a Chrome extension for capture and form pre-fill. FastAPI, HTMX, Postgres 16 + pgvector, Redis, Docker.",
+      footerLink: []
     },
     {
       image: require("./assets/images/projects/subkeLogo.png"),
       projectName: "Subke CRM & Logistics Platform",
       projectDesc:
-        "Full-stack internal CRM and logistics management system. Multi-tenant architecture with DB-driven RBAC, real-time messaging hub, parcel tracking, QR-code item management, JTL ERP integration, and 30+ domain service classes across 72+ DB migrations.",
+        "Multi-tenant enterprise CRM and logistics system: database-driven runtime RBAC, real-time messaging hub, QR-code parcel tracking, JTL ERP integration, 30+ domain service classes across 72+ migrations. Delivered with AI-assisted development alongside hand-written code.",
       footerLink: [
         {
           name: "Visit Website",
@@ -277,9 +255,9 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/projects/bryantLogo.png"),
-      projectName: "Bryant Dental — International",
+      projectName: "Bryant Dental",
       projectDesc:
-        "Award-winning e-commerce platform for a UK dental equipment manufacturer, built with Laravel and React.js. Features a custom product configurator, quote engine, and content management system. Awwwards Honorable Mention 2018. Dental Industry Awards Best Website 2019.",
+        "Award-winning e-commerce platform for a UK dental equipment manufacturer, with a product configurator, quote engine and content management. Awwwards Honorable Mention 2018, Dental Industry Awards Best Website 2019.",
       footerLink: [
         {
           name: "Visit Website",
@@ -293,48 +271,39 @@ const bigProjects = {
 
 // Achievement Section
 const achievementSection = {
-  title: emoji("Achievements & Certifications 🏆"),
-  subtitle: "Awards, certifications, and recognised work from across my career.",
+  title: emoji("Achievements 🏆"),
+  subtitle: "Recognised work from across my career.",
   achievementsCards: [
     {
       title: "Awwwards Honorable Mention",
       subtitle:
-        "Bryant Dental recognised with an Awwwards Honorable Mention in 2018 for outstanding web design and development.",
+        "Bryant Dental received an Awwwards Honorable Mention in 2018 for web design and development.",
       image: require("./assets/images/achievements/awwwardsLogo.png"),
       imageAlt: "Awwwards Logo",
       footerLink: []
     },
     {
-      title: "Dental Industry Awards — Best Website 2019",
-      subtitle:
-        "Bryant Dental won Best Website at the Dental Industry Awards 2019.",
+      title: "Dental Industry Awards, Best Website 2019",
+      subtitle: "Bryant Dental won Best Website at the Dental Industry Awards 2019.",
       image: require("./assets/images/achievements/dentalAwardsLogo.png"),
       imageAlt: "Dental Industry Awards Logo",
-      footerLink: []
-    },
-    {
-      title: "Laravel Advanced Topics — Certification",
-      subtitle:
-        "Completed advanced Laravel 9.x certification covering architecture patterns, queue systems, and performance optimisation.",
-      image: require("./assets/images/achievements/laravelLogo.png"),
-      imageAlt: "Laravel Logo",
       footerLink: []
     }
   ],
   display: true
 };
 
-// Blogs Section — disabled
+// Blogs Section: disabled
 const blogSection = {
   display: false
 };
 
-// Talks Section — disabled
+// Talks Section: disabled
 const talkSection = {
   display: false
 };
 
-// Podcast Section — disabled
+// Podcast Section: disabled
 const podcastSection = {
   display: false
 };
@@ -342,7 +311,7 @@ const podcastSection = {
 // Resume Section
 const resumeSection = {
   title: "Resume",
-  subtitle: "Feel free to download my resume",
+  subtitle: "Download the current CV",
   display: true
 };
 
@@ -350,11 +319,11 @@ const resumeSection = {
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle:
-    "Available for backend engineering roles, technical consulting, and architecture discussions.",
+    "Open to remote AI/ML engineering roles and contract work. Email is the fastest way to reach me.",
   email_address: "me@danialrp.com"
 };
 
-// Twitter — disabled
+// Twitter: disabled
 const twitterDetails = {
   userName: "",
   display: false

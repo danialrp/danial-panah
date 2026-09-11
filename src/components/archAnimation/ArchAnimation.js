@@ -3,10 +3,9 @@ import StyleContext from "../../contexts/StyleContext";
 import "./ArchAnimation.scss";
 
 const LANGS = [
-  {name: "Go", color: "#89dceb"},
-  {name: "Python", color: "#f9e2af"},
-  // {name: "Laravel", color: "#cba6f7"},
-  {name: "Node.js", color: "#339933"},
+  {name: "Claude", color: "#89dceb"},
+  {name: "GPT", color: "#f9e2af"},
+  {name: "Llama", color: "#a6e3a1"},
 ];
 
 export default function ArchAnimation() {
@@ -45,10 +44,10 @@ export default function ArchAnimation() {
           <span className="dot red" />
           <span className="dot yellow" />
           <span className="dot green" />
-          <span className="titlebar-label">system-architecture</span>
+          <span className="titlebar-label">llm-pipeline</span>
           <span className="req-badge">
             <span className="req-dot" />
-            {reqCount.toLocaleString()} req/s
+            {reqCount.toLocaleString()} events/s
           </span>
         </div>
 
@@ -125,7 +124,7 @@ export default function ArchAnimation() {
             />
             {/* API → Redis */}
             <line
-              x1="256" y1="148" x2="292" y2="148"
+              x1="256" y1="148" x2="276" y2="148"
               stroke="#313244" strokeWidth="1.5"
               strokeDasharray="5 3"
               markerEnd="url(#arr-red)"
@@ -151,7 +150,7 @@ export default function ArchAnimation() {
               fontFamily="Fira Code, monospace"
               letterSpacing="1.2"
             >
-              CLIENT
+              STREAM
             </text>
             <text
               x="180" y="51"
@@ -161,7 +160,7 @@ export default function ArchAnimation() {
               fontFamily="Fira Code, monospace"
               fontWeight="700"
             >
-              Application
+              Market Data
             </text>
 
             {/* ── API Layer node ── */}
@@ -179,7 +178,7 @@ export default function ArchAnimation() {
               fontFamily="Fira Code, monospace"
               letterSpacing="1.2"
             >
-              API LAYER
+              LLM DETECTION
             </text>
             {/* Cycling language name */}
             <text
@@ -199,11 +198,11 @@ export default function ArchAnimation() {
 
             {/* ── Redis node ── */}
             <rect
-              x="296" y="128" width="60" height="40"
+              x="280" y="128" width="76" height="40"
               rx="8" fill="#11111b" stroke="#f38ba8" strokeWidth="1.5"
             />
             <text
-              x="326" y="144"
+              x="318" y="144"
               textAnchor="middle"
               fill="#6c7086"
               fontSize="9"
@@ -213,14 +212,14 @@ export default function ArchAnimation() {
               CACHE
             </text>
             <text
-              x="326" y="160"
+              x="318" y="160"
               textAnchor="middle"
               fill="#f38ba8"
               fontSize="12"
               fontFamily="Fira Code, monospace"
               fontWeight="700"
             >
-              Redis
+              pgvector
             </text>
 
             {/* ── PostgreSQL node ── */}
@@ -236,7 +235,7 @@ export default function ArchAnimation() {
               fontFamily="Fira Code, monospace"
               letterSpacing="1.2"
             >
-              DATABASE
+              TIME SERIES
             </text>
             <text
               x="180" y="272"
@@ -246,7 +245,7 @@ export default function ArchAnimation() {
               fontFamily="Fira Code, monospace"
               fontWeight="700"
             >
-              PostgreSQL
+              TimescaleDB
             </text>
 
             {/* ── Animated packets ── */}
@@ -290,7 +289,7 @@ export default function ArchAnimation() {
                 dur="0.75s"
                 repeatCount="indefinite"
                 begin="-0.1s"
-                path="M256,148 L293,148"
+                path="M256,148 L278,148"
               />
               <animate
                 attributeName="opacity"
@@ -306,7 +305,7 @@ export default function ArchAnimation() {
                 dur="0.75s"
                 repeatCount="indefinite"
                 begin="-0.48s"
-                path="M256,148 L293,148"
+                path="M256,148 L278,148"
               />
               <animate
                 attributeName="opacity"

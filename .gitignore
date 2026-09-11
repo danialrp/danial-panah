@@ -34,3 +34,6 @@ public/blogs.json
 .htaccess
 CLAUDE.md
 sitemap.xml
+
+# deploy credentials
+.deploy.env

@@ -4,17 +4,22 @@ import {skillsSection} from "../../portfolio";
 import {
   SiGo,
   SiPython,
-  SiLaravel,
-  SiPhp,
-  SiRedis,
-  SiDocker,
-  SiGit,
-  SiVuedotjs,
-  SiNodedotjs,
+  SiPytorch,
+  SiLangchain,
+  SiHuggingface,
+  SiAnthropic,
+  SiOpenai,
   SiFastapi,
-  SiNatsdotio
+  SiPostgresql,
+  SiRedis,
+  SiNatsdotio,
+  SiDocker,
+  SiKubernetes,
+  SiMlflow,
+  SiTypescript
 } from "react-icons/si";
-import {FaAws, FaDatabase} from "react-icons/fa";
+import {FaAws} from "react-icons/fa";
+import {TbBrandAzure} from "react-icons/tb";
 
 const WebSocketIcon = ({className}) => (
   <svg
@@ -30,19 +35,23 @@ const WebSocketIcon = ({className}) => (
 );
 
 const iconComponents = {
-  go: SiGo,
   python: SiPython,
-  laravel: SiLaravel,
-  php: SiPhp,
-  postgresql: FaDatabase,
-  redis: SiRedis,
-  docker: SiDocker,
-  aws: FaAws,
-  git: SiGit,
-  vuejs: SiVuedotjs,
-  nodejs: SiNodedotjs,
+  pytorch: SiPytorch,
+  langchain: SiLangchain,
+  huggingface: SiHuggingface,
+  anthropic: SiAnthropic,
+  openai: SiOpenai,
   fastapi: SiFastapi,
+  postgresql: SiPostgresql,
+  redis: SiRedis,
   nats: SiNatsdotio,
+  docker: SiDocker,
+  kubernetes: SiKubernetes,
+  aws: FaAws,
+  azure: TbBrandAzure,
+  mlflow: SiMlflow,
+  go: SiGo,
+  typescript: SiTypescript,
   websocket: WebSocketIcon
 };
 

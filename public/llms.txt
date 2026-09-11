@@ -1,0 +1,24 @@
+# Danial Panah
+
+> Senior AI / Machine Learning Engineer. 10+ years in software and backend engineering, the last year and a half on production AI systems: LLM applications, agentic and tool-calling systems, RAG, fine-tuning and MLOps. Based in Bulgaria, open to remote roles and contract work.
+
+## What he does
+
+- Builds LLM applications and agentic, tool-calling systems that run in production, with evals, guardrails and cost controls (Anthropic Claude API, OpenAI API, LangChain, LangGraph, MCP).
+- Designs RAG pipelines: chunking, embeddings, vector databases (pgvector, Qdrant, Pinecone, Weaviate), hybrid search, reranking, semantic caching.
+- Fine-tunes open-weight models with PyTorch and Hugging Face (LoRA/QLoRA) and evaluates them.
+- Ships and operates models with MLOps on AWS and Azure: Docker, Kubernetes, CI/CD, MLflow, monitoring for latency, cost and error rate.
+- Backend foundation: Go, Python, TypeScript; event-driven microservices, real-time and WebSocket systems, NATS JetStream, Redis, PostgreSQL, TimescaleDB, multi-tenant SaaS.
+
+## Selected work
+
+- CryHub (2026): LLM-driven anomaly and pattern detection pipeline on real-time crypto market data, built on the Anthropic Claude API; replaced manual review. 4-service event-driven platform, 8-stream NATS JetStream topology, Redis, TimescaleDB, WebSockets.
+- AI Job-Application Co-Pilot (2026): self-built platform that drafts tailored resumes and screening answers from a structured profile, with human review on every submission. OpenRouter routing across three model tiers with budget caps, a 3-layer cache (exact match, pgvector embeddings, provider prompt cache), Chrome extension for capture and form pre-fill.
+- Subke GmbH (2023-2026): multi-tenant enterprise CRM and logistics platform, 30+ domain service classes, database-driven RBAC, real-time messaging hub, JTL ERP integration.
+
+## Links
+
+- [CV (PDF)](https://danialrp.com/DanialPanah.pdf): current CV
+- [GitHub](https://github.com/danialrp): code
+- [LinkedIn](https://www.linkedin.com/in/danialrp/): profile
+- Email: me@danialrp.com

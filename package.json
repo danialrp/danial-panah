@@ -22,14 +22,15 @@
     "sass": "^1.32.8"
   },
   "scripts": {
-    "predeploy": "npm run build",
     "start": "node fetch.js && react-scripts start",
     "build": "node fetch.js && react-scripts build",
-    "deploy": "gh-pages -b master -d build",
+    "deploy": "npm run build && python3 scripts/deploy.py",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write \"./**/*.{js,css,json,scss}\"",
-    "check-format": "prettier -c \"./**/*.{js,css,json,scss}\""
+    "check-format": "prettier -c \"./**/*.{js,css,json,scss}\"",
+    "deploy:dry": "python3 scripts/deploy.py --dry-run",
+    "postbuild": "node scripts/prerender.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -54,6 +55,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "dotenv": "^8.2.0",
-    "prettier": "^2.3.1"
+    "prettier": "^2.3.1",
+    "puppeteer": "^25.10.0"
   }
 }
