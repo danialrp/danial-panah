@@ -238,7 +238,7 @@ const bigProjects = {
       image: require("./assets/images/projects/copilotLogo.png"),
       projectName: "AI Job-Application Co-Pilot",
       projectDesc:
-        "Self-built platform that drafts tailored resumes and screening answers from a structured profile; a human reviews and submits every application. OpenRouter routing across three model tiers with budget caps, a pgvector semantic cache and a Chrome extension for capture and form pre-fill.",
+        "Self-built platform that drafts tailored resumes and screening answers from a structured profile; a human reviews and submits every application. OpenRouter multi-tier routing, pgvector semantic cache, Chrome extension.",
       footerLink: []
     },
     {
