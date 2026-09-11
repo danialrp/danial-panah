@@ -30,6 +30,7 @@ import os
 import posixpath
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -132,7 +133,16 @@ def main():
         if f.is_file() and f.name != ".DS_Store":
             local[f.relative_to(BUILD).as_posix()] = f
 
-    ftp = connect(env)
+    ftp = None
+    for attempt in range(1, 5):  # Pure-FTPd on the host throttles repeated connections; back off and retry
+        try:
+            ftp = connect(env)
+            break
+        except (OSError, ftplib.Error) as e:
+            if attempt == 4:
+                raise
+            print(f"connect failed ({e.__class__.__name__}), retrying in {20 * attempt}s")
+            time.sleep(20 * attempt)
     try:
         remote = remote_listing(ftp, base)
         to_upload = [rel for rel, f in sorted(local.items()) if args.force or remote.get(rel, (None,))[0] != f.stat().st_size]
