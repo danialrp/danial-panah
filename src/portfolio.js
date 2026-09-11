@@ -238,7 +238,7 @@ const bigProjects = {
       image: require("./assets/images/projects/copilotLogo.png"),
       projectName: "AI Job-Application Co-Pilot",
       projectDesc:
-        "Self-built platform that ingests job postings and drafts tailored resumes and screening answers, every claim traced back to a structured profile; a human reviews and submits each application. OpenRouter routing across three model tiers with automatic fallback and hard budget caps, a 3-layer cache (exact match, pgvector embeddings, provider prompt cache), and a Chrome extension for capture and form pre-fill. FastAPI, HTMX, Postgres 16 + pgvector, Redis, Docker.",
+        "Self-built platform that drafts tailored resumes and screening answers from a structured profile; a human reviews and submits every application. OpenRouter routing across three model tiers with budget caps, a 3-layer cache with pgvector embeddings, and a Chrome extension for capture and form pre-fill. FastAPI, Postgres, Redis, Docker.",
       footerLink: []
     },
     {
