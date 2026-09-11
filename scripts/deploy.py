@@ -36,6 +36,7 @@ ROOT = Path(__file__).resolve().parent.parent
 BUILD = ROOT / "build"
 ENV_FILE = ROOT / ".deploy.env"
 PRUNE_PREFIXES = ("static/",)  # only hashed assets get pruned; never the root
+PRUNE_GRACE_HOURS = 24  # keep superseded bundles this long so a visitor's cached index.html still loads
 
 
 def load_env():
@@ -77,7 +78,7 @@ def connect(env):
 
 
 def remote_listing(ftp, base):
-    """Walk the remote tree under base; return {relative_path: size}."""
+    """Walk the remote tree under base; return {relative_path: (size, modify)}."""
     files = {}
 
     def walk(rel):
@@ -93,7 +94,7 @@ def remote_listing(ftp, base):
             if facts.get("type") == "dir":
                 walk(child)
             elif facts.get("type") == "file":
-                files[child] = int(facts.get("size", -1))
+                files[child] = (int(facts.get("size", -1)), facts.get("modify", ""))
 
     walk("")
     return files
@@ -134,8 +135,10 @@ def main():
     ftp = connect(env)
     try:
         remote = remote_listing(ftp, base)
-        to_upload = [rel for rel, f in sorted(local.items()) if args.force or remote.get(rel) != f.stat().st_size]
-        stale = [rel for rel in sorted(remote) if rel not in local and rel.startswith(PRUNE_PREFIXES)]
+        to_upload = [rel for rel, f in sorted(local.items()) if args.force or remote.get(rel, (None,))[0] != f.stat().st_size]
+        cutoff = (datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(hours=PRUNE_GRACE_HOURS)).strftime("%Y%m%d%H%M%S")
+        stale = [rel for rel in sorted(remote)
+                 if rel not in local and rel.startswith(PRUNE_PREFIXES) and remote[rel][1][:14] < cutoff]
         print(f"{len(local)} local files, {len(remote)} remote files, {len(to_upload)} to upload, {len(stale)} stale")
         if args.dry_run:
             for rel in to_upload:
