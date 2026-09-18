@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy — yt-uploader</title>
+    <meta name="description" content="Privacy policy for yt-uploader, a personal single-user YouTube upload tool built by Danial Panah." />
+    <link rel="canonical" href="https://danialrp.com/privacy" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="theme-color" content="#ffffff" />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #ffffff;
+        --text: #1a1a2e;
+        --muted: #6b7280;
+        --accent: #4a9eff;
+        --rule: #f1f3f7;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0f1221;
+          --text: #e8eaf0;
+          --muted: #a8b2d8;
+          --rule: #2a2f45;
+        }
+      }
+      html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); }
+      body {
+        font: 17px/1.6 Montserrat, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      main { max-width: 720px; margin: 0 auto; padding: 56px 24px 72px; }
+      h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 8px; }
+      .updated { color: var(--muted); margin: 0 0 32px; font-size: 0.95rem; }
+      p { margin: 0 0 18px; }
+      strong { font-weight: 700; }
+      code { font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 0.92em; }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.9rem; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Privacy Policy — yt-uploader</h1>
+      <p class="updated">Last updated: 2026-09-18</p>
+
+      <p><strong>What this is.</strong> <code>yt-uploader</code> is a personal, single-user tool built by Danial Panah. It uploads videos from his own computer to his own YouTube channel using the YouTube Data API.</p>
+
+      <p><strong>Who uses it.</strong> Only Danial Panah. It is not offered to, installed by, or run on behalf of anyone else.</p>
+
+      <p><strong>Data accessed.</strong> Through Google OAuth, the tool requests permission to upload videos and manage the YouTube channel that Danial selects. It accesses only that channel.</p>
+
+      <p><strong>Data collected or stored.</strong> None beyond what is needed to run: the OAuth token Google issues is stored locally on Danial's computer and is never transmitted anywhere except to Google's APIs. No analytics, no tracking, no third-party services, no databases.</p>
+
+      <p><strong>Data shared.</strong> Nothing is shared with any third party.</p>
+
+      <p><strong>Data deletion.</strong> Revoking the app's access at <a href="https://myaccount.google.com/permissions">https://myaccount.google.com/permissions</a> invalidates the stored token. Deleting the local token file removes the last copy.</p>
+
+      <p><strong>Contact.</strong> <a href="mailto:danial.rp@gmail.com">danial.rp@gmail.com</a></p>
+
+      <footer><a href="/">danialrp.com</a></footer>
+    </main>
+  </body>
+</html>
