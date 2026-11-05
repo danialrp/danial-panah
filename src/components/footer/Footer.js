@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import "./Footer.scss";
 import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
+import {visibleSocialLinks} from "../../portfolio";
 
 export default function Footer() {
   const {isDark} = useContext(StyleContext);
@@ -13,19 +14,19 @@ export default function Footer() {
           &copy; 2015 – {new Date().getFullYear()} Danial Panah
         </p>
         <p className={textClass} style={{fontSize: "15px"}}>
-          <a href="https://github.com/danialrp" target="_blank" rel="noreferrer">
-            GitHub
-          </a>
-          {" · "}
-          <a href="https://www.linkedin.com/in/danialrp/" target="_blank" rel="noreferrer">
-            LinkedIn
-          </a>
-          {" · "}
-          <a href="https://x.com/DanialPanah" target="_blank" rel="noreferrer">
-            𝕏
-          </a>
-          {" · "}
-          <a href="mailto:me@danialrp.com">Email</a>
+          {visibleSocialLinks.map((link, i) => (
+            <React.Fragment key={link.key}>
+              {i > 0 ? " · " : null}
+              <a
+                href={link.url}
+                {...(link.url.startsWith("mailto:")
+                  ? {}
+                  : {target: "_blank", rel: "noreferrer"})}
+              >
+                {link.label}
+              </a>
+            </React.Fragment>
+          ))}
         </p>
       </div>
     </Fade>

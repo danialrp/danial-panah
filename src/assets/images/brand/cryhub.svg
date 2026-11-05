@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="400" height="400">
+<defs>
+<linearGradient id="cg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0b4fd8"/><stop offset="1" stop-color="#1d86e0"/></linearGradient>
+<linearGradient id="fold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0b1a4a" stop-opacity="0"/><stop offset="1" stop-color="#0b1a4a" stop-opacity="0.18"/></linearGradient>
+</defs>
+<rect width="200" height="200" rx="24" fill="#161b33"/>
+<rect x="1" y="1" width="198" height="198" rx="23" fill="none" stroke="#2a3150" stroke-width="2"/>
+<rect x="34" y="34" width="132" height="132" rx="32" fill="url(#cg)"/>
+<svg x="34" y="34" width="132" height="132" viewBox="0 0 1153 1153">
+<path d="M605 228 A354 354 0 1 0 606.4 936 V758 A176 176 0 1 1 605 406 Z" fill="#f4f6fb"/>
+<clipPath id="cclip"><path d="M605 228 A354 354 0 1 0 606.4 936 V758 A176 176 0 1 1 605 406 Z"/></clipPath>
+<rect x="486" y="450" width="120" height="500" fill="url(#fold)" clip-path="url(#cclip)"/>
+<path d="M594 936 V851 A354 354 0 0 1 948 497 V671 A180 180 0 0 0 768 851 V936 Z" fill="#ffffff"/>
+</svg>
+</svg>

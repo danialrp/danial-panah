@@ -6,8 +6,8 @@ import StyleContext from "../../contexts/StyleContext";
 import Loading from "../../containers/loading/Loading";
 import ActivityCharts from "../../components/activityCharts/ActivityCharts";
 export default function Projects() {
-  const GithubRepoCard = lazy(() =>
-    import("../../components/githubRepoCard/GithubRepoCard")
+  const GithubRepoCard = lazy(
+    () => import("../../components/githubRepoCard/GithubRepoCard")
   );
   const FailedLoading = () => null;
   const renderLoader = () => <Loading />;
@@ -48,7 +48,9 @@ export default function Projects() {
       <Suspense fallback={renderLoader()}>
         <div className="main" id="opensource">
           <h1 className="project-title">
-            {openSource.showRepos === false ? "GitHub Activity" : "Open Source Projects"}
+            {openSource.showRepos === false
+              ? "GitHub Activity"
+              : "Open Source Projects"}
           </h1>
           <div className="repo-cards-div-main">
             {(openSource.showRepos === false ? [] : repo).map((v, i) => {
@@ -66,7 +68,7 @@ export default function Projects() {
           <Button
             text={"More Projects"}
             className="project-button"
-            href={socialMediaLinks.github}
+            href={socialMediaLinks.items.find(i => i.key === "github").url}
             newTab={true}
           />
         </div>

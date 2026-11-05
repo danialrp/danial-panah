@@ -88,6 +88,10 @@
   background-color: $instagram;
 }
 
+.youtube i {
+  background-color: $youtube;
+}
+
 /* Hover Transition */
 .google i:hover,
 .gitlab i:hover,
@@ -95,6 +99,7 @@
 .linkedin i:hover,
 .facebook i:hover,
 .instagram i:hover,
+.youtube i:hover,
 .stack-overflow i:hover,
 .kaggle i:hover,
 .medium i:hover {

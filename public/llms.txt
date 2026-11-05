@@ -1,6 +1,6 @@
 # Danial Panah
 
-> Senior AI / Machine Learning Engineer. 10+ years in software and backend engineering, the last year and a half on production AI systems: LLM applications, agentic and tool-calling systems, RAG, fine-tuning and MLOps. Based in Bulgaria, open to remote roles and contract work.
+> Senior AI / Machine Learning Engineer. 12+ years in software and backend engineering, the last year and a half on production AI systems: LLM applications, agentic and tool-calling systems, RAG, fine-tuning and MLOps. Based in Bulgaria, open to remote roles and contract work.
 
 ## What he does
 
@@ -20,5 +20,8 @@
 
 - [CV (PDF)](https://danialrp.com/DanialPanah.pdf): current CV
 - [GitHub](https://github.com/danialrp): code
+- [GitLab](https://gitlab.com/danialrp): code
 - [LinkedIn](https://www.linkedin.com/in/danialrp/): profile
+- [Instagram](https://www.instagram.com/danial.pnh/): content
+- [YouTube](https://www.youtube.com/@danial-panah): content
 - Email: me@danialrp.com

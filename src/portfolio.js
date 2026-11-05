@@ -24,21 +24,56 @@ const greeting = {
   username: "danial panah",
   title: "Danial Panah",
   subTitle: emoji(
-    "Senior AI / Machine Learning Engineer building LLM applications, agentic systems, RAG and MLOps on 10+ years of backend engineering. 🚀"
+    "Senior AI / Machine Learning Engineer building LLM applications, agentic systems, RAG and MLOps on 12+ years of backend engineering. 🚀"
   ),
   resumeLink: "/DanialPanah.pdf",
   displayGreeting: true
 };
 
 // Social Media Links
+// Order of `items` is the order on the site. `show: false` hides an entry
+// everywhere (header icons and footer) while keeping it for later.
 const socialMediaLinks = {
-  github: "https://github.com/danialrp",
-  linkedin: "https://www.linkedin.com/in/danialrp/",
-  gmail: "me@danialrp.com",
-  gitlab: "https://gitlab.com/danialrp",
-  x: "https://x.com/DanialPanah",
-  display: true
+  display: true,
+  items: [
+    {
+      key: "github",
+      label: "GitHub",
+      url: "https://github.com/danialrp",
+      show: true
+    },
+    {
+      key: "gitlab",
+      label: "GitLab",
+      url: "https://gitlab.com/danialrp",
+      show: true
+    },
+    {
+      key: "linkedin",
+      label: "LinkedIn",
+      url: "https://www.linkedin.com/in/danialrp/",
+      show: true
+    },
+    {
+      key: "instagram",
+      label: "Instagram",
+      url: "https://www.instagram.com/danial.pnh/",
+      show: true
+    },
+    {
+      key: "youtube",
+      label: "YouTube",
+      url: "https://www.youtube.com/@danial-panah",
+      show: true
+    },
+    {key: "x", label: "X", url: "https://x.com/DanialPanah", show: false},
+    {key: "email", label: "Email", url: "mailto:me@danialrp.com", show: true}
+  ]
 };
+// Entries that are switched on and have a URL, in display order.
+const visibleSocialLinks = socialMediaLinks.display
+  ? socialMediaLinks.items.filter(item => item.show && item.url)
+  : [];
 
 // Skills Section
 const skillsSection = {
@@ -84,7 +119,7 @@ const educationInfo = {
   schools: [
     {
       schoolName: "Azad University, Science and Research Branch",
-      logo: require("./assets/images/azadLogo.png"),
+      logo: require("./assets/images/brand/azad.svg").default,
       subHeader: "M.Sc. Computer Software Engineering",
       duration: "2015",
       desc: "Postgraduate work in software engineering and systems architecture.",
@@ -92,7 +127,7 @@ const educationInfo = {
     },
     {
       schoolName: "Azad University",
-      logo: require("./assets/images/azadLogo.png"),
+      logo: require("./assets/images/brand/azad.svg").default,
       subHeader: "B.Sc. Computer Engineering",
       duration: "2010",
       desc: "Computer engineering, algorithms, data structures and software development.",
@@ -136,7 +171,8 @@ const workExperiences = {
     {
       role: "Senior Backend Engineer",
       company: "CryHub",
-      companylogo: require("./assets/images/companies/cryhubLogo.png"),
+      companylogo: require("./assets/images/brand/cryhub.svg").default,
+      bannerColor: "#2a5fb0",
       date: "Jan 2026 – Aug 2026",
       desc: "LLM-driven anomaly detection on real-time crypto market data, on top of an event-driven microservices platform I owned end to end.",
       descBullets: [
@@ -150,7 +186,8 @@ const workExperiences = {
     {
       role: "Senior Backend Engineer",
       company: "Subke GmbH",
-      companylogo: require("./assets/images/companies/subkeLogo.png"),
+      companylogo: require("./assets/images/brand/subke.svg").default,
+      bannerColor: "#a8865a",
       date: "Jan 2023 – Jan 2026",
       desc: "Multi-tenant enterprise CRM and logistics platform for a Hamburg logistics company, delivered remotely.",
       descBullets: [
@@ -163,7 +200,8 @@ const workExperiences = {
     {
       role: "Lead Backend Developer",
       company: "The Bolt",
-      companylogo: require("./assets/images/companies/theBoltLogo.png"),
+      companylogo: require("./assets/images/brand/thebolt.svg").default,
+      bannerColor: "#6b4508",
       date: "Jan 2022 – Jul 2022",
       desc: "Backend lead for a London agency shipping full-stack applications to clients in automotive, clinical and industrial sectors.",
       descBullets: [
@@ -175,7 +213,8 @@ const workExperiences = {
     {
       role: "Senior Laravel Developer",
       company: "Matter of Software",
-      companylogo: require("./assets/images/companies/matterLogo.png"),
+      companylogo: require("./assets/images/brand/matter.svg").default,
+      bannerColor: "#9b0f4f",
       date: "May 2021 – Sep 2021",
       desc: "Logistics and asset-management software for UK clients.",
       descBullets: [
@@ -186,7 +225,8 @@ const workExperiences = {
     {
       role: "Backend Developer & DevOps",
       company: "Kappa London",
-      companylogo: require("./assets/images/companies/kappaLogo.png"),
+      companylogo: require("./assets/images/brand/kappa.svg").default,
+      bannerColor: "#3a3d4a",
       date: "Apr 2020 – May 2021",
       desc: "E-commerce, healthcare and social platforms for UK clients, plus deployment and server operations.",
       descBullets: [
@@ -198,7 +238,8 @@ const workExperiences = {
     {
       role: "Laravel Developer, Project Manager & DevOps",
       company: "Teknet Ltd",
-      companylogo: require("./assets/images/companies/teknetLogo.png"),
+      companylogo: require("./assets/images/brand/teknet.svg").default,
+      bannerColor: "#1a3196",
       date: "Jun 2018 – Jan 2020",
       desc: "Enterprise project management and scheduling systems for UK clients, from architecture to deployment.",
       descBullets: [
@@ -223,7 +264,7 @@ const bigProjects = {
   subtitle: "Production AI systems and the platforms underneath them",
   projects: [
     {
-      image: require("./assets/images/projects/cryhubLogo.png"),
+      image: require("./assets/images/brand/cryhub.svg").default,
       projectName: "CryHub: LLM Anomaly Detection on Live Market Data",
       projectDesc:
         "LLM-driven pipeline that detects anomalies and patterns in real-time crypto market data and replaced manual review. Built on the Anthropic Claude API over a 4-service event-driven platform: Go, NATS JetStream (8 streams), Redis, TimescaleDB, WebSockets.",
@@ -235,14 +276,14 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/projects/copilotLogo.png"),
+      image: require("./assets/images/brand/copilot.svg").default,
       projectName: "AI Job-Application Co-Pilot",
       projectDesc:
         "Self-built platform that drafts tailored resumes and screening answers from a structured profile; a human reviews and submits every application. OpenRouter multi-tier routing, pgvector semantic cache, Chrome extension.",
       footerLink: []
     },
     {
-      image: require("./assets/images/projects/subkeLogo.png"),
+      image: require("./assets/images/brand/subke.svg").default,
       projectName: "Subke CRM & Logistics Platform",
       projectDesc:
         "Multi-tenant enterprise CRM and logistics system: database-driven runtime RBAC, real-time messaging hub, QR-code parcel tracking, JTL ERP integration, 30+ domain service classes across 72+ migrations. Delivered with AI-assisted development alongside hand-written code.",
@@ -254,7 +295,7 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/projects/bryantLogo.png"),
+      image: require("./assets/images/brand/bryant.svg").default,
       projectName: "Bryant Dental",
       projectDesc:
         "Award-winning e-commerce platform for a UK dental equipment manufacturer, with a product configurator, quote engine and content management. Awwwards Honorable Mention 2018, Dental Industry Awards Best Website 2019.",
@@ -269,6 +310,53 @@ const bigProjects = {
   display: true
 };
 
+// Content & Community Section
+// All figures live here; update them in this one block. `asOf` is shown under the
+// section so readers know when the numbers were taken.
+const contentSection = {
+  title: "Content & Community",
+  subtitle:
+    "Educator on digital asset security and AI: AI agents, fine-tuning and machine learning, explained through real mechanisms and practical walkthroughs.",
+  asOf: "November 2026",
+  stats: [
+    {value: "7,900+", label: "Instagram followers"},
+    {value: "48", label: "Reels published"},
+    {value: "20,000+", label: "Average views per Reel"},
+    {value: "2", label: "Reels above 130,000 views"},
+    {value: "8", label: "Reels above 50,000 views"}
+  ],
+  topReelsTitle: "Top Reels",
+  topReels: [
+    {
+      title: "Ponzi schemes explained",
+      views: "138,869",
+      url: "https://www.instagram.com/reel/Dclm9w0sldq/"
+    },
+    {
+      title: "How to tell if an exchange is safe",
+      views: "130,938",
+      url: "https://www.instagram.com/reel/Ddg7bFuM60V/"
+    },
+    {
+      title: "Token scam breakdown (FNDK)",
+      views: "96,549",
+      url: "https://www.instagram.com/reel/DcBwIWRMaYz/"
+    },
+    {
+      title: "Security settings to enable in Trust Wallet before using it",
+      views: "35,608",
+      url: "https://www.instagram.com/reel/DelwP4_xNX7/"
+    }
+  ],
+  cta: {
+    text: "Follow on Instagram",
+    url: "https://www.instagram.com/danial.pnh/"
+  },
+  partnershipLabel: "Partnership inquiries:",
+  partnershipEmail: "me@danialrp.com",
+  display: true
+};
+
 // Achievement Section
 const achievementSection = {
   title: emoji("Achievements 🏆"),
@@ -278,14 +366,15 @@ const achievementSection = {
       title: "Awwwards Honorable Mention",
       subtitle:
         "Bryant Dental received an Awwwards Honorable Mention in 2018 for web design and development.",
-      image: require("./assets/images/achievements/awwwardsLogo.png"),
+      image: require("./assets/images/brand/awwwards.svg").default,
       imageAlt: "Awwwards Logo",
       footerLink: []
     },
     {
       title: "Dental Industry Awards, Best Website 2019",
-      subtitle: "Bryant Dental won Best Website at the Dental Industry Awards 2019.",
-      image: require("./assets/images/achievements/dentalAwardsLogo.png"),
+      subtitle:
+        "Bryant Dental won Best Website at the Dental Industry Awards 2019.",
+      image: require("./assets/images/brand/dentistry.svg").default,
       imageAlt: "Dental Industry Awards Logo",
       footerLink: []
     }
@@ -335,6 +424,7 @@ export {
   illustration,
   greeting,
   socialMediaLinks,
+  visibleSocialLinks,
   splashScreen,
   skillsSection,
   educationInfo,
@@ -342,6 +432,7 @@ export {
   workExperiences,
   openSource,
   bigProjects,
+  contentSection,
   achievementSection,
   blogSection,
   talkSection,

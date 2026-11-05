@@ -1,136 +1,59 @@
 import React from "react";
 import "./SocialMedia.scss";
-import {socialMediaLinks} from "../../portfolio";
+import {visibleSocialLinks} from "../../portfolio";
+
+// Icon per link key; order and visibility come from socialMediaLinks in portfolio.js.
+const XIcon = () => (
+  <span className="x-icon">
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.736-8.87L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  </span>
+);
+
+const icons = {
+  github: {className: "github", icon: "fab fa-github"},
+  gitlab: {className: "gitlab", icon: "fab fa-gitlab"},
+  linkedin: {className: "linkedin", icon: "fab fa-linkedin-in"},
+  instagram: {className: "instagram", icon: "fab fa-instagram"},
+  youtube: {className: "youtube", icon: "fab fa-youtube"},
+  facebook: {className: "facebook", icon: "fab fa-facebook-f"},
+  medium: {className: "medium", icon: "fab fa-medium"},
+  stackoverflow: {className: "stack-overflow", icon: "fab fa-stack-overflow"},
+  kaggle: {className: "kaggle", icon: "fab fa-kaggle"},
+  x: {className: "x-social", custom: XIcon},
+  email: {className: "google", icon: "fas fa-envelope"}
+};
 
 export default function socialMedia() {
-  if (!socialMediaLinks.display) {
+  if (!visibleSocialLinks.length) {
     return null;
   }
   return (
     <div className="social-media-div">
-      {socialMediaLinks.github ? (
-        <a
-          href={socialMediaLinks.github}
-          className="icon-button github"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-github"></i>
-          <span></span>
-        </a>
-      ) : null}
-
-      {socialMediaLinks.linkedin ? (
-        <a
-          href={socialMediaLinks.linkedin}
-          className="icon-button linkedin"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-linkedin-in"></i>
-          <span></span>
-        </a>
-      ) : null}
-
-      {socialMediaLinks.gmail ? (
-        <a
-          href={`mailto:${socialMediaLinks.gmail}`}
-          className="icon-button google"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fas fa-envelope"></i>
-          <span></span>
-        </a>
-      ) : null}
-
-      {socialMediaLinks.gitlab ? (
-        <a
-          href={socialMediaLinks.gitlab}
-          className="icon-button gitlab"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-gitlab"></i>
-          <span></span>
-        </a>
-      ) : null}
-
-      {socialMediaLinks.facebook ? (
-        <a
-          href={socialMediaLinks.facebook}
-          className="icon-button facebook"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-facebook-f"></i>
-          <span></span>
-        </a>
-      ) : null}
-
-      {socialMediaLinks.instagram ? (
-        <a
-          href={socialMediaLinks.instagram}
-          className="icon-button instagram"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-instagram"></i>
-          <span></span>
-        </a>
-      ) : null}
-
-      {socialMediaLinks.x ? (
-        <a
-          href={socialMediaLinks.x}
-          className="icon-button x-social"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className="x-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-label="X (Twitter)">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.736-8.87L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-          </span>
-          <span></span>
-        </a>
-      ) : null}
-
-      {socialMediaLinks.medium ? (
-        <a
-          href={socialMediaLinks.medium}
-          className="icon-button medium"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-medium"></i>
-          <span></span>
-        </a>
-      ) : null}
-
-      {socialMediaLinks.stackoverflow ? (
-        <a
-          href={socialMediaLinks.stackoverflow}
-          className="icon-button stack-overflow"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-stack-overflow"></i>
-          <span></span>
-        </a>
-      ) : null}
-
-      {socialMediaLinks.kaggle ? (
-        <a
-          href={socialMediaLinks.kaggle}
-          className="icon-button kaggle"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-kaggle"></i>
-          <span></span>
-        </a>
-      ) : null}
+      {visibleSocialLinks.map(link => {
+        const entry = icons[link.key];
+        if (!entry) return null;
+        const Custom = entry.custom;
+        return (
+          <a
+            key={link.key}
+            href={link.url}
+            className={`icon-button ${entry.className}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={link.label}
+          >
+            {Custom ? <Custom /> : <i className={entry.icon}></i>}
+            <span></span>
+          </a>
+        );
+      })}
     </div>
   );
 }
