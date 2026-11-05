@@ -196,7 +196,7 @@ def push_to_git():
         print("git: nothing to commit")
     else:
         stamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
-        git("commit", "-q", "-m", f"deploy: {stamp}\n\nCo-Authored-By: Claude Opus 5 <noreply@anthropic.com>")
+        git("commit", "-q", "-m", f"deploy: {stamp}")
         print("git: committed")
     branch = git("branch", "--show-current").stdout.strip()
     r = git("push", "origin", branch, check=False)
